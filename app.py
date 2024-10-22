@@ -7,7 +7,7 @@ from uuid import uuid4
 import logging
 
 # Importar funciones de los módulos
-from modules.youtube_downloader import descargar_audio  # Asegúrate de que este es el nombre correcto
+from modules.youtube_man import procesar_audio  # Asegúrate de que este es el nombre correcto
 from modules.aws_services import subir_audio_s3, iniciar_transcripcion
 from modules.transcriber import obtener_transcripcion, limpiar_texto
 from modules.bedrock_generator import generar_sugerencias_claude_optimizado
