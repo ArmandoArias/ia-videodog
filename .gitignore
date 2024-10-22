@@ -1,9 +1,9 @@
-# Entorno virtual
+# Entorno Virtual
 venv/
 env/
 .venv/
 .env/
-.env
+
 # Archivos de Python
 __pycache__/
 *.py[cod]
@@ -15,7 +15,10 @@ Thumbs.db
 
 # Archivos de logs
 *.log
+app.log
 
 # Otros
-audios/*
-app.log
+audios/
+
+# Ignorar todo dentro de la carpeta modules/__pycache__
+modules/__pycache__/
