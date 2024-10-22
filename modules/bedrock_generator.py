@@ -80,7 +80,7 @@ Tu tarea es crear tres títulos para un video de YouTube en español, dirigidos 
 
 2. **Título 2 (Intriga)**: El segundo título debe crear **intriga**, usando emociones como traición, deseo, engaño o sorpresas familiares, pero sin revelar demasiado de la trama.
 
-3. **Título 3 (Creativo y optimizado)**: El tercer título debe ser el más **creativo** y **optimizado** para YouTube, cumpliendo con las políticas, sin ser clickbait, pero muy atractivo. Debes usar mayúsculas en palabras clave importantes para captar la atención del espectador, pero no en todo el título. Este título debe ser breve y directo, pero lo suficientemente intrigante para generar curiosidad.
+3. **Título 3 (Creativo y optimizado)**: El tercer título debe ser el más **creativo** y **optimizado** para YouTube, cumpliendo con las políticas, sin ser clickbait, pero muy atractivo. Debes captar la atención del espectador. Este título debe ser breve y directo, pero lo suficientemente intrigante para generar curiosidad.
 
 4. **Resumen**: También proporciona un resumen **detallado** y **atractivo** para el video, que intrigue al espectador sin revelar demasiado de la trama, pero que lo invite a ver el contenido completo. Este resumen debe generar suspense y estar alineado con las políticas de las plataformas. Evita el uso de clickbait o contenido engañoso.
 
@@ -90,7 +90,7 @@ Tu tarea es crear tres títulos para un video de YouTube en español, dirigidos 
 Proporciona lo siguiente en formato JSON:
 - "Título Opción 1": Un título alineado con la estructura de los ejemplos proporcionados, pero manteniendo la idea central del título actual.
 - "Título Opción 2": Un título intrigante que no revele demasiado pero que evoque emociones fuertes.
-- "Título Opción 3": Un título muy creativo, optimizado para YouTube, cumpliendo con las políticas, breve, y usando mayúsculas en palabras clave importantes.
+- "Título Opción 3": Un título muy creativo, optimizado para YouTube, cumpliendo con las políticas, breve.
 - "Resumen": Un resumen intrigante, detallado, y atractivo que invite a los espectadores a ver el video completo.
 """
     # Crear el payload para la solicitud
