@@ -39,7 +39,7 @@ def procesar_video(url_video, session_id):
             'total_steps': total_steps
         }, room=session_id)
 
-        audio_path, video_id, titulo_actual = descargar_audio(url_video)
+        audio_path, video_id, titulo_actual = procesar_audio(url_video)
 
         # Paso 2: Subir el audio a S3
         current_step += 1
