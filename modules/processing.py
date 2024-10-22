@@ -12,6 +12,22 @@ from modules.bedrock_generator import generar_sugerencias_claude_optimizado
 from modules.utils import limpiar_youtube_url
 
 def procesar_video(url_video, session_id, socketio):
+    Parámetros:
+    - url_video (str): URL del video a procesar.
+    - session_id (str): ID de la sesión para la comunicación en tiempo real.
+    - socketio (SocketIO): Instancia de SocketIO para emitir eventos en tiempo real.
+    Pasos del procesamiento:
+    1. Descargar el audio del video.
+    2. Subir el audio a un bucket S3.
+    3. Iniciar la transcripción del audio.
+    4. Obtener la transcripción del audio.
+    5. Generar sugerencias basadas en la transcripción.
+    Emite eventos de progreso y resultado a través de SocketIO.
+    Manejo de errores:
+    - Captura y registra cualquier excepción que ocurra durante el procesamiento.
+    - Emite un evento de error a través de SocketIO en caso de excepción.
+    Retorno:
+    - No retorna ningún valor. Los resultados se emiten a través de eventos de SocketIO y se guardan en la base de datos.
     """
     Función para procesar el video en segundo plano.
     """

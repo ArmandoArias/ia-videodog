@@ -929,3 +929,4 @@ b'{"metrics":{"latencyMs":8354},"output":{"message":{"content":[{"text":"{\\n  \
 2024-10-22 13:52:01,214 - INFO - Video guardado en la base de datos: <Video https://www.youtube.com/watch?v=AG3bDYkzT-8 - SE ENAMORÓ DEL PAPÁ DE SU MEJOR AMIGA Y PASÓ ESTO>
 2024-10-22 13:52:01,387 - INFO - Datos guardados correctamente para session_id: 4c5ac3d2-8ebc-4ae1-bc11-70ac3dedb367
 2024-10-22 13:52:01,388 - INFO - Evento 'resultado' emitido correctamente para session_id: 4c5ac3d2-8ebc-4ae1-bc11-70ac3dedb367
+2024-10-22 14:07:56,325 - INFO - Cliente desconectado

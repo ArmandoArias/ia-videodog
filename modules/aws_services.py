@@ -65,6 +65,13 @@ def verificar_audio_s3(bucket_name, s3_key):
             raise Exception("Error al verificar el archivo en S3.") from e
 
 def iniciar_transcripcion(job_name, audio_uri):
+    El flujo del método es el siguiente:
+    1. Verifica si ya existe un trabajo de transcripción con el nombre dado.
+    2. Si el trabajo ya existe y está completado, retorna la transcripción existente.
+    3. Si el trabajo no existe, intenta iniciar un nuevo trabajo de transcripción con los parámetros proporcionados.
+    4. Si ocurre un error al iniciar el trabajo de transcripción, lanza una excepción con un mensaje de error.
+    Ejemplo de uso:
+    >>> iniciar_transcripcion('mi_trabajo', 's3://mi-bucket/mi-audio.mp3')
     """
     Inicia un trabajo de transcripción en AWS Transcribe si no existe ya.
 
