@@ -26,3 +26,38 @@ pre {
     padding: 15px;
     border-radius: 5px;
 }
+
+/* Añade un margen inferior a las tarjetas */
+.card {
+    margin-bottom: 1rem;
+}
+
+/* Estiliza los botones de copiar */
+.btn-copy {
+    margin-left: 1rem;
+}
+
+/* Asegura que las tarjetas ocupen todo el ancho en pantallas pequeñas */
+@media (max-width: 576px) {
+    .card-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-outline-primary {
+        margin-top: 10px;
+    }
+}
+
+/* Añadir estilos adicionales para mejorar la visibilidad */
+#sugerencias .card {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #sugerencias .card {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

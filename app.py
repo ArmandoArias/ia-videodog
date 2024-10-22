@@ -8,6 +8,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, join_room
 from uuid import uuid4
 import logging
+import json  # Importar json para manejar cadenas JSON
 
 # Importar funciones de los módulos después de monkey_patch
 from modules.youtube_man import procesar_audio
@@ -107,6 +108,16 @@ def procesar_video(url_video, session_id):
         logging.info(f"Paso {current_step}/{total_steps}: Generando sugerencias para session_id: {session_id}")
 
         sugerencias = generar_sugerencias_claude_optimizado(transcripcion_limpia, titulo_actual)
+        
+        # Asegurarse de que 'sugerencias' es un diccionario
+        if isinstance(sugerencias, str):
+            try:
+                sugerencias = json.loads(sugerencias)
+                logging.debug("Sugerencias convertidas de cadena a diccionario.")
+            except json.JSONDecodeError as e:
+                logging.error(f"Error al decodificar las sugerencias: {e}")
+                sugerencias = {"error": "Error al generar sugerencias."}
+
         logging.info(f"Sugerencias generadas: {sugerencias}")
 
         # Emitir evento de resultado final
@@ -126,7 +137,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/process')
-def process_route():
+def process():
     return render_template('process.html')
 
 @app.route('/procesar_video', methods=['POST'])
@@ -168,7 +179,8 @@ def handle_disconnect():
     logging.info('Cliente desconectado')
 
 @socketio.on('join')
-def handle_join(session_id):
+def handle_join(data):
+    session_id = data
     join_room(session_id)
     logging.info(f'Cliente unido a la sala {session_id}')
 
