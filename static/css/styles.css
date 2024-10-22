@@ -1,0 +1,28 @@
+/* static/css/styles.css */
+
+body {
+    padding-top: 70px; /* Espacio para el menú de navegación */
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.display-4 {
+    font-weight: bold;
+}
+
+#progress-section, #result-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+}
