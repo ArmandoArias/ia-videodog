@@ -2076,3 +2076,5 @@ b'{"metrics":{"latencyMs":8295},"output":{"message":{"content":[{"text":"{\\n  \
 2024-10-22 02:27:34,422 - INFO - Evento 'resultado' emitido correctamente para session_id: d9af368d-56ee-4fb7-9146-597d1448bd69
 2024-10-22 02:27:42,772 - DEBUG - Generando nuevo session_id: 45d2733d-c49b-430d-a817-7d5de34290eb
 2024-10-22 02:27:42,772 - INFO - El video con URL https://www.youtube.com/watch?v=_lhKdLCmmSI ya existe en la base de datos.
+2024-10-22 02:30:15,448 - INFO - Cliente desconectado
+2024-10-22 02:30:19,716 - INFO - Cliente conectado
