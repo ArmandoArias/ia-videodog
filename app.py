@@ -1,32 +1,33 @@
-# app.py
-
 import eventlet
-eventlet.monkey_patch()  # Debe llamarse antes de cualquier otra importación
+eventlet.monkey_patch()  # Esta línea debe ser la primera antes de cualquier otra importación
 
+# Ahora se importan otros módulos
 import os
 from flask import Flask, render_template, request, jsonify
-from flask_migrate import Migrate  # Importar Flask-Migrate
-from dotenv import load_dotenv  # Importar dotenv para manejar variables de entorno
+from flask_migrate import Migrate
+from dotenv import load_dotenv
 import logging
 from uuid import uuid4
-from flask_socketio import SocketIO, join_room  # Importar SocketIO
+from flask_socketio import SocketIO, join_room
 
-# Importar funciones de los módulos después de monkey_patch
+# Importa los módulos después del monkey patching
 from modules.youtube_man import procesar_audio
 from modules.aws_services import subir_audio_s3, iniciar_transcripcion
 from modules.transcriber import obtener_transcripcion, limpiar_texto
 from modules.bedrock_generator import generar_sugerencias_claude_optimizado
 from modules.utils import limpiar_youtube_url
-from modules.processing import procesar_video  # Importar la función procesar_video
+from modules.models import db, Video
 
-from modules.models import db, Video  # Importar el modelo y db
+# Importar el módulo de procesamiento sin circularidad
+from modules.processing import procesar_video_with_context
+
 
 # Cargar las variables de entorno desde .env
 load_dotenv()
 
 # Configuración de Logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Nivel de logging más detallado
+    level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("app.log"),
@@ -35,26 +36,24 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Definir y configurar la aplicación Flask
+# Configuración de la aplicación Flask
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'tu_secreto_aqui')  # Reemplaza con un secreto real
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')  # Asegúrate de definir DATABASE_URI en tu .env
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'tu_secreto_aqui')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Inicializar SQLAlchemy
+# Inicializar SQLAlchemy y Flask-Migrate
 db.init_app(app)
-
-# Inicializar Flask-Migrate
 migrate = Migrate(app, db)
 
 # Inicializar Flask-SocketIO
 socketio = SocketIO(app, async_mode='eventlet')
 
-# Crear las tablas de la base de datos (si no existen)
+# Crear las tablas de la base de datos si no existen
 with app.app_context():
     db.create_all()
 
-# Rutas de la aplicación
+# Rutas
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -65,27 +64,20 @@ def process():
 
 @app.route('/procesar_video', methods=['POST'])
 def procesar_video_endpoint():
-    """
-    Endpoint para procesar un video de YouTube.
-
-    Espera un JSON con 'url_video'.
-    """
     data = request.get_json()
     url_video = data.get('url_video')
     if not url_video:
         logger.warning("No se proporcionó una URL de video.")
         return jsonify({'error': 'No se proporcionó una URL de video'}), 400
 
-    # Validar y limpiar la URL en el backend
     url_limpia = limpiar_youtube_url(url_video)
     if not url_limpia:
         logger.warning(f"La URL proporcionada no es válida: {url_video}")
         return jsonify({'error': 'La URL proporcionada no es válida.'}), 400
 
     try:
-        # Verificar si el video ya existe en la base de datos
         existing_video = Video.query.get(url_limpia)
-        session_id = str(uuid4())  # Generar un nuevo session_id
+        session_id = str(uuid4())
         logger.debug(f"Generando nuevo session_id: {session_id}")
 
         if existing_video:
@@ -102,45 +94,29 @@ def procesar_video_endpoint():
                 'session_id': session_id
             }), 200
         else:
-            # Iniciar la tarea en segundo plano dentro del contexto de la aplicación
-            socketio.start_background_task(procesar_video_with_context, url_limpia, session_id)
+            socketio.start_background_task(procesar_video_with_context, app, url_limpia, session_id, socketio)
             return jsonify({'message': 'Procesamiento iniciado.', 'session_id': session_id}), 200
     except Exception as e:
         logger.error(f"Error en procesar_video_endpoint: {e}", exc_info=True)
         return jsonify({'error': str(e)}), 500
 
-def procesar_video_with_context(url_video, session_id):
-    """
-    Función envolvente que ejecuta 'procesar_video' dentro del contexto de la aplicación.
-    """
-    with app.app_context():
-        procesar_video(url_video, session_id, socketio)
-
-# Nueva Ruta: /database
 @app.route('/database')
 def database():
-    """
-    Ruta para mostrar los videos ya procesados con paginación y búsqueda.
-    """
     page = request.args.get('page', 1, type=int)
-    per_page = 10  # Número de videos por página
+    per_page = 10
     search_query = request.args.get('search', '', type=str)
 
     if search_query:
-        # Filtrar videos por título o URL
         filter_condition = (Video.title1.ilike(f'%{search_query}%')) | \
                            (Video.title2.ilike(f'%{search_query}%')) | \
                            (Video.title3.ilike(f'%{search_query}%')) | \
                            (Video.url_video.ilike(f'%{search_query}%'))
         videos_paginados = Video.query.filter(filter_condition).order_by(Video.url_video.desc()).paginate(page=page, per_page=per_page, error_out=False)
     else:
-        # Consultar la base de datos con paginación sin filtros
         videos_paginados = Video.query.order_by(Video.url_video.desc()).paginate(page=page, per_page=per_page, error_out=False)
 
     return render_template('database.html', videos=videos_paginados, search_query=search_query)
 
-
-# Manejo de eventos de SocketIO
 @socketio.on('connect')
 def handle_connect():
     logger.info('Cliente conectado')
@@ -159,5 +135,4 @@ def handle_join(data):
         logger.warning('No se proporcionó un session_id para unirse a la sala.')
 
 if __name__ == '__main__':
-    # Ejecutar la aplicación sin el modo debug para evitar conflictos con Eventlet
     socketio.run(app, host='0.0.0.0', port=5000, debug=False)
