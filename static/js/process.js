@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const urlVideo = document.getElementById('url_video').value;
 
+        // Validar la URL en el frontend (opcional pero recomendable)
+        if (!isValidYouTubeUrl(urlVideo)) {
+            alert('Por favor, ingresa una URL válida de YouTube.');
+            return;
+        }
+
         // Mostrar la sección de progreso
         progressSection.style.display = 'block';
         progressBar.style.width = '0%';
@@ -30,22 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             if (data.session_id) {
-                // Escuchar eventos relacionados con la sesión
+                // Unirse a la sala correspondiente
                 socket.emit('join', data.session_id);
             } else if (data.error) {
                 alert(data.error);
+                progressSection.style.display = 'none';
             }
         })
         .catch(error => {
             console.error('Error:', error);
             alert('Ocurrió un error al iniciar el procesamiento.');
+            progressSection.style.display = 'none';
         });
     });
 
     // Escuchar eventos de progreso
     socket.on('progreso', (data) => {
         const { step, total_steps, data: mensaje } = data;
-        const porcentaje = (step / total_steps) * 100;
+        const porcentaje = Math.round((step / total_steps) * 100);
         progressBar.style.width = `${porcentaje}%`;
         progressBar.setAttribute('aria-valuenow', porcentaje);
         progressText.textContent = mensaje;
@@ -65,4 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`Error: ${mensaje}`);
         progressSection.style.display = 'none';
     });
+
+    // Función para validar URLs de YouTube
+    function isValidYouTubeUrl(url) {
+        const pattern = /^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/;
+        return pattern.test(url);
+    }
 });
