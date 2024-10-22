@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinner = document.getElementById('spinner'); // Spinner de carga
     const resultSection = document.getElementById('result-section');
     const sugerenciasContainer = document.getElementById('sugerencias');
+    const processButton = document.getElementById('process-button'); // Botón "Procesar"
 
     // Configuración de Toastr (opcional, para personalizar notificaciones)
     toastr.options = {
@@ -32,6 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             toastr.error('Por favor, ingresa una URL válida de YouTube.');
             return;
         }
+
+        // Desactivar el botón "Procesar" y cambiar su texto
+        processButton.disabled = true;
+        processButton.textContent = 'Procesando...';
 
         // Mostrar la sección de progreso y spinner
         progressSection.style.display = 'block';
@@ -60,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 socket.emit('join', data.session_id);
             } else if (data.error) {
                 toastr.error(data.error);
+                // Reactivar el botón "Procesar" y restablecer su texto
+                processButton.disabled = false;
+                processButton.textContent = 'Procesar';
                 progressSection.style.display = 'none';
                 spinner.style.display = 'none';
             }
@@ -67,6 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error:', error);
             toastr.error('Ocurrió un error al iniciar el procesamiento.');
+            // Reactivar el botón "Procesar" y restablecer su texto
+            processButton.disabled = false;
+            processButton.textContent = 'Procesar';
             progressSection.style.display = 'none';
             spinner.style.display = 'none';
         });
@@ -166,6 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resultSection.style.display = 'block';
         progressSection.style.display = 'none';
         spinner.style.display = 'none';
+
+        // Reactivar el botón "Procesar" y restablecer su texto
+        processButton.disabled = false;
+        processButton.textContent = 'Procesar';
     });
 
     // Escuchar evento de error
@@ -175,6 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
         toastr.error(`Error: ${mensaje}`);
         progressSection.style.display = 'none';
         spinner.style.display = 'none';
+
+        // Reactivar el botón "Procesar" y restablecer su texto
+        processButton.disabled = false;
+        processButton.textContent = 'Procesar';
     });
 
     // Función para validar URLs de YouTube
