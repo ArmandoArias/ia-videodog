@@ -1,0 +1,628 @@
+2024-10-21 21:51:50,926 - WARNING -  * Debugger is active!
+2024-10-21 21:51:50,930 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 21:51:51,078 - INFO - Cliente conectado
+2024-10-21 21:52:04,079 - INFO - Cliente desconectado
+2024-10-21 21:52:04,182 - INFO - Cliente conectado
+2024-10-21 21:52:07,236 - DEBUG - Generando nuevo session_id: 4c16e336-ef1c-4e3d-92df-753977406f2b
+2024-10-21 21:52:07,236 - DEBUG - Iniciando procesamiento del video con session_id: 4c16e336-ef1c-4e3d-92df-753977406f2b
+2024-10-21 21:52:07,237 - INFO - Paso 1/5: Descargando audio para session_id: 4c16e336-ef1c-4e3d-92df-753977406f2b
+2024-10-21 21:52:07,316 - INFO - Cliente unido a la sala 4c16e336-ef1c-4e3d-92df-753977406f2b
+2024-10-21 21:52:19,228 - INFO - Audio descargado: C:\IA\ia-youtube\modules\..\audios\_kvbBXcrOi4.mp3, Video ID: _kvbBXcrOi4, Título: LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER
+2024-10-21 21:52:19,228 - INFO - Paso 2/5: Subiendo audio a S3 para session_id: 4c16e336-ef1c-4e3d-92df-753977406f2b
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x0000014C844C1C10>
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x0000014C844C1B80>
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000014C844C5A60>
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000014C8612BAC0>>
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x0000014C8456C0A0>>
+2024-10-21 21:52:19,229 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x0000014C844C19D0>
+2024-10-21 21:52:19,230 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000014C844C5C10>
+2024-10-21 21:52:19,230 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000014C8612BAC0>>
+2024-10-21 21:52:19,230 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'ia-libretos', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'audios/_kvbBXcrOi4.mp3', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2024-10-21 21:52:19,231 - DEBUG - Endpoint provider result: https://ia-libretos.s3.amazonaws.com
+2024-10-21 21:52:19,231 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2024-10-21 21:52:19,231 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2024-10-21 21:52:19,231 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x0000014C844C1EE0>
+2024-10-21 21:52:19,231 - DEBUG - Event before-call.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x0000014C8612BAF0>>
+2024-10-21 21:52:19,231 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_recursion_detection_header at 0x0000014C844C15E0>
+2024-10-21 21:52:19,231 - DEBUG - Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x0000014C844C5280>
+2024-10-21 21:52:19,232 - DEBUG - Making request for OperationModel(name=HeadObject) with params: {'url_path': '/audios/_kvbBXcrOi4.mp3', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'', 'auth_path': '/ia-libretos/audios/_kvbBXcrOi4.mp3', 'url': 'https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x0000014C86002400>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 's3_redirect': {'redirected': False, 'bucket': 'ia-libretos', 'params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}}, 'input_params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2024-10-21 21:52:19,232 - DEBUG - Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000014C860020D0>>
+2024-10-21 21:52:19,233 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x0000014C8456C0A0>>
+2024-10-21 21:52:19,233 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x0000014C844C1820>
+2024-10-21 21:52:19,233 - DEBUG - Event before-sign.s3.HeadObject: calling handler <function remove_arn_from_signing_path at 0x0000014C844C5B80>
+2024-10-21 21:52:19,233 - DEBUG - Event before-sign.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x0000014C8612BAF0>>
+2024-10-21 21:52:19,233 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 21:52:19,233 - DEBUG - CanonicalRequest:
+HEAD
+/audios/_kvbBXcrOi4.mp3
+
+host:ia-libretos.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20241022T025219Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2024-10-21 21:52:19,233 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T025219Z
+20241022/us-east-1/s3/aws4_request
+acda10203a7bed83bef12994c21c00cfe96445812be57c9e098f224bd4057bf3
+2024-10-21 21:52:19,233 - DEBUG - Signature:
+634db57a482a6e4a8d6607b257ac28497417ee464cb02a6d47ed540eb5e93465
+2024-10-21 21:52:19,234 - DEBUG - Event request-created.s3.HeadObject: calling handler <function add_retry_headers at 0x0000014C844C59D0>
+2024-10-21 21:52:19,234 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3, headers={'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T025219Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=634db57a482a6e4a8d6607b257ac28497417ee464cb02a6d47ed540eb5e93465', 'amz-sdk-invocation-id': b'4f769b3d-7284-4813-9788-236a298d2405', 'amz-sdk-request': b'attempt=1'}>
+2024-10-21 21:52:19,234 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 21:52:19,522 - DEBUG - Exception received when sending urllib3 HTTP request
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+2024-10-21 21:52:19,538 - DEBUG - Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x0000014C8612BA30>
+2024-10-21 21:52:19,538 - ERROR - Error en procesar_video: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\app.py", line 66, in procesar_video
+    audio_uri = subir_audio_s3(audio_path, bucket_name, s3_key)
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 31, in subir_audio_s3
+    if verificar_audio_s3(bucket_name, s3_key):
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 57, in verificar_audio_s3
+    s3.head_object(Bucket=bucket_name, Key=s3_key)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 569, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1005, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1029, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 307, in _should_retry
+    return self._checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 509, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+2024-10-21 22:11:25,662 - INFO -  * Detected change in 'C:\\IA\\ia-youtube\\app.py', reloading
+2024-10-21 22:11:26,952 - WARNING -  * Debugger is active!
+2024-10-21 22:11:26,957 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:11:27,088 - INFO - Cliente conectado
+2024-10-21 22:11:29,191 - INFO -  * Detected change in 'C:\\IA\\ia-youtube\\app.py', reloading
+2024-10-21 22:11:30,420 - WARNING -  * Debugger is active!
+2024-10-21 22:11:30,425 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:11:31,535 - INFO - Cliente conectado
+2024-10-21 22:11:58,368 - INFO -  * Restarting with stat
+2024-10-21 22:11:59,424 - WARNING -  * Debugger is active!
+2024-10-21 22:11:59,429 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:11:59,597 - INFO - Cliente conectado
+2024-10-21 22:12:04,103 - INFO - Cliente desconectado
+2024-10-21 22:12:07,332 - INFO - Cliente conectado
+2024-10-21 22:12:09,963 - DEBUG - Generando nuevo session_id: 03c85845-5d77-45f5-b8e9-bd15749a3418
+2024-10-21 22:12:09,963 - DEBUG - Iniciando procesamiento del video con session_id: 03c85845-5d77-45f5-b8e9-bd15749a3418
+2024-10-21 22:12:09,963 - INFO - Paso 1/5: Descargando audio para session_id: 03c85845-5d77-45f5-b8e9-bd15749a3418
+2024-10-21 22:12:10,043 - INFO - Cliente unido a la sala 03c85845-5d77-45f5-b8e9-bd15749a3418
+2024-10-21 22:12:22,420 - INFO - Audio descargado: C:\IA\ia-youtube\modules\..\audios\_kvbBXcrOi4.mp3, Video ID: _kvbBXcrOi4, Título: LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER
+2024-10-21 22:12:22,420 - INFO - Paso 2/5: Subiendo audio a S3 para session_id: 03c85845-5d77-45f5-b8e9-bd15749a3418
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x000002D4D29C2C10>
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x000002D4D29C2B80>
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x000002D4D29C6A60>
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x000002D4D462B610>>
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x000002D4D2A62880>>
+2024-10-21 22:12:22,421 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x000002D4D29C29D0>
+2024-10-21 22:12:22,422 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x000002D4D29C6C10>
+2024-10-21 22:12:22,422 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x000002D4D462B610>>
+2024-10-21 22:12:22,422 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'ia-libretos', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'audios/_kvbBXcrOi4.mp3', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2024-10-21 22:12:22,423 - DEBUG - Endpoint provider result: https://ia-libretos.s3.amazonaws.com
+2024-10-21 22:12:22,423 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2024-10-21 22:12:22,423 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2024-10-21 22:12:22,423 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x000002D4D29C2EE0>
+2024-10-21 22:12:22,424 - DEBUG - Event before-call.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x000002D4D462B640>>
+2024-10-21 22:12:22,424 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_recursion_detection_header at 0x000002D4D29C25E0>
+2024-10-21 22:12:22,424 - DEBUG - Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x000002D4D29C6280>
+2024-10-21 22:12:22,424 - DEBUG - Making request for OperationModel(name=HeadObject) with params: {'url_path': '/audios/_kvbBXcrOi4.mp3', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'', 'auth_path': '/ia-libretos/audios/_kvbBXcrOi4.mp3', 'url': 'https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002D4D4500F10>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 's3_redirect': {'redirected': False, 'bucket': 'ia-libretos', 'params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}}, 'input_params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2024-10-21 22:12:22,424 - DEBUG - Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002D4D4500BE0>>
+2024-10-21 22:12:22,425 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000002D4D2A62880>>
+2024-10-21 22:12:22,425 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x000002D4D29C2820>
+2024-10-21 22:12:22,425 - DEBUG - Event before-sign.s3.HeadObject: calling handler <function remove_arn_from_signing_path at 0x000002D4D29C6B80>
+2024-10-21 22:12:22,425 - DEBUG - Event before-sign.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x000002D4D462B640>>
+2024-10-21 22:12:22,425 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:12:22,425 - DEBUG - CanonicalRequest:
+HEAD
+/audios/_kvbBXcrOi4.mp3
+
+host:ia-libretos.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20241022T031222Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2024-10-21 22:12:22,426 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031222Z
+20241022/us-east-1/s3/aws4_request
+5d08905b75f7cd0dc438d398acc178dff0d334cd42f3efefd67f8ebebaa91d8b
+2024-10-21 22:12:22,426 - DEBUG - Signature:
+1caeb9bfcad3a2baabd8696af7846fb610121b61365796abc206a8b880fa2dc1
+2024-10-21 22:12:22,426 - DEBUG - Event request-created.s3.HeadObject: calling handler <function add_retry_headers at 0x000002D4D29C69D0>
+2024-10-21 22:12:22,426 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3, headers={'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031222Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=1caeb9bfcad3a2baabd8696af7846fb610121b61365796abc206a8b880fa2dc1', 'amz-sdk-invocation-id': b'e7dc36a6-71ec-4b04-9d61-550a80cded52', 'amz-sdk-request': b'attempt=1'}>
+2024-10-21 22:12:22,426 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:12:22,784 - DEBUG - Exception received when sending urllib3 HTTP request
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+2024-10-21 22:12:22,787 - DEBUG - Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x000002D4D462B580>
+2024-10-21 22:12:22,788 - ERROR - Error en procesar_video: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\app.py", line 68, in procesar_video
+    audio_uri = subir_audio_s3(audio_path, bucket_name, s3_key)
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 31, in subir_audio_s3
+    if verificar_audio_s3(bucket_name, s3_key):
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 57, in verificar_audio_s3
+    s3.head_object(Bucket=bucket_name, Key=s3_key)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 569, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1005, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1029, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 307, in _should_retry
+    return self._checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 509, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+2024-10-21 22:14:47,853 - INFO -  * Detected change in 'C:\\IA\\ia-youtube\\app.py', reloading
+2024-10-21 22:14:47,955 - INFO -  * Restarting with stat
+2024-10-21 22:14:49,055 - WARNING -  * Debugger is active!
+2024-10-21 22:14:49,060 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:14:49,550 - INFO - Cliente conectado
+2024-10-21 22:15:08,149 - INFO -  * Restarting with stat
+2024-10-21 22:15:09,219 - WARNING -  * Debugger is active!
+2024-10-21 22:15:09,224 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:15:09,355 - INFO - Cliente conectado
+2024-10-21 22:15:11,490 - INFO - Cliente desconectado
+2024-10-21 22:15:11,747 - INFO - Cliente conectado
+2024-10-21 22:15:15,088 - DEBUG - Generando nuevo session_id: 1d7414f1-87a4-465f-9a5b-cd52d0d5c525
+2024-10-21 22:15:15,088 - DEBUG - Iniciando procesamiento del video con session_id: 1d7414f1-87a4-465f-9a5b-cd52d0d5c525
+2024-10-21 22:15:15,088 - INFO - Paso 1/5: Descargando audio para session_id: 1d7414f1-87a4-465f-9a5b-cd52d0d5c525
+2024-10-21 22:15:15,167 - INFO - Cliente unido a la sala 1d7414f1-87a4-465f-9a5b-cd52d0d5c525
+2024-10-21 22:15:27,684 - INFO - Audio descargado: C:\IA\ia-youtube\modules\..\audios\_kvbBXcrOi4.mp3, Video ID: _kvbBXcrOi4, Título: LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER
+2024-10-21 22:15:27,684 - INFO - Paso 2/5: Subiendo audio a S3 para session_id: 1d7414f1-87a4-465f-9a5b-cd52d0d5c525
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x0000022711651C10>
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x0000022711651B80>
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000022711656A60>
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x00000227132BB610>>
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x00000227116F2880>>
+2024-10-21 22:15:27,685 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x00000227116519D0>
+2024-10-21 22:15:27,686 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000022711656C10>
+2024-10-21 22:15:27,686 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x00000227132BB610>>
+2024-10-21 22:15:27,686 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'ia-libretos', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'audios/_kvbBXcrOi4.mp3', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2024-10-21 22:15:27,687 - DEBUG - Endpoint provider result: https://ia-libretos.s3.amazonaws.com
+2024-10-21 22:15:27,687 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2024-10-21 22:15:27,687 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2024-10-21 22:15:27,687 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x0000022711651EE0>
+2024-10-21 22:15:27,687 - DEBUG - Event before-call.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x00000227132BB640>>
+2024-10-21 22:15:27,687 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_recursion_detection_header at 0x00000227116515E0>
+2024-10-21 22:15:27,687 - DEBUG - Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x0000022711656280>
+2024-10-21 22:15:27,687 - DEBUG - Making request for OperationModel(name=HeadObject) with params: {'url_path': '/audios/_kvbBXcrOi4.mp3', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'', 'auth_path': '/ia-libretos/audios/_kvbBXcrOi4.mp3', 'url': 'https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002271318FF10>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 's3_redirect': {'redirected': False, 'bucket': 'ia-libretos', 'params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}}, 'input_params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2024-10-21 22:15:27,688 - DEBUG - Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002271318FBE0>>
+2024-10-21 22:15:27,688 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x00000227116F2880>>
+2024-10-21 22:15:27,688 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x0000022711651820>
+2024-10-21 22:15:27,688 - DEBUG - Event before-sign.s3.HeadObject: calling handler <function remove_arn_from_signing_path at 0x0000022711656B80>
+2024-10-21 22:15:27,688 - DEBUG - Event before-sign.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x00000227132BB640>>
+2024-10-21 22:15:27,688 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:15:27,688 - DEBUG - CanonicalRequest:
+HEAD
+/audios/_kvbBXcrOi4.mp3
+
+host:ia-libretos.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20241022T031527Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2024-10-21 22:15:27,689 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031527Z
+20241022/us-east-1/s3/aws4_request
+81df33983d2de0c4b4f820c3796e5c4e193523b90a8fbdf2f5cccb1fc242e1e2
+2024-10-21 22:15:27,689 - DEBUG - Signature:
+87d4df1db4683db5b91b097eff3c37939188f72b73a44a989fafd916cc77be60
+2024-10-21 22:15:27,689 - DEBUG - Event request-created.s3.HeadObject: calling handler <function add_retry_headers at 0x00000227116569D0>
+2024-10-21 22:15:27,689 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3, headers={'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031527Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=87d4df1db4683db5b91b097eff3c37939188f72b73a44a989fafd916cc77be60', 'amz-sdk-invocation-id': b'72c75bac-d63f-49d1-a027-5ebe4ea744dd', 'amz-sdk-request': b'attempt=1'}>
+2024-10-21 22:15:27,689 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:15:28,032 - DEBUG - Exception received when sending urllib3 HTTP request
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+2024-10-21 22:15:28,035 - DEBUG - Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x00000227132BB580>
+2024-10-21 22:15:28,035 - ERROR - Error en procesar_video: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "C:\IA\ia-youtube\venv\lib\site-packages\urllib3\connection.py", line 406, in connect
+    context.verify_mode = resolve_cert_reqs(self.cert_reqs)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  File "C:\Users\jaap_\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 720, in verify_mode
+    super(SSLContext, SSLContext).verify_mode.__set__(self, value)
+  [Previous line repeated 482 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\IA\ia-youtube\app.py", line 68, in procesar_video
+    audio_uri = subir_audio_s3(audio_path, bucket_name, s3_key)
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 31, in subir_audio_s3
+    if verificar_audio_s3(bucket_name, s3_key):
+  File "C:\IA\ia-youtube\modules\aws_services.py", line 57, in verificar_audio_s3
+    s3.head_object(Bucket=bucket_name, Key=s3_key)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 569, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1005, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\client.py", line 1029, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 307, in _should_retry
+    return self._checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "C:\IA\ia-youtube\venv\lib\site-packages\botocore\httpsession.py", line 509, in send
+    raise HTTPClientError(error=e)
+botocore.exceptions.HTTPClientError: An HTTP Client raised an unhandled exception: maximum recursion depth exceeded while calling a Python object
+2024-10-21 22:16:47,124 - INFO -  * Detected change in 'C:\\IA\\ia-youtube\\app.py', reloading
+2024-10-21 22:16:47,285 - INFO -  * Restarting with stat
+2024-10-21 22:16:48,350 - WARNING -  * Debugger is active!
+2024-10-21 22:16:48,359 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:16:49,545 - INFO - Cliente conectado
+2024-10-21 22:17:06,087 - INFO -  * Restarting with stat
+2024-10-21 22:17:07,014 - WARNING -  * Debugger is active!
+2024-10-21 22:17:07,019 - INFO -  * Debugger PIN: 782-652-182
+2024-10-21 22:17:07,321 - INFO - Cliente conectado
+2024-10-21 22:17:18,995 - INFO - Cliente desconectado
+2024-10-21 22:17:19,286 - INFO - Cliente conectado
+2024-10-21 22:17:22,614 - DEBUG - Generando nuevo session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:22,615 - DEBUG - Iniciando procesamiento del video con session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:22,615 - INFO - Paso 1/5: Descargando audio para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:22,694 - INFO - Cliente unido a la sala 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:35,260 - INFO - Audio descargado: C:\IA\ia-youtube\modules\..\audios\_kvbBXcrOi4.mp3, Video ID: _kvbBXcrOi4, Título: LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER
+2024-10-21 22:17:35,260 - INFO - Paso 2/5: Subiendo audio a S3 para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:35,260 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function sse_md5 at 0x000002D9B1C23280>
+2024-10-21 22:17:35,260 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function validate_bucket_name at 0x000002D9B1C231F0>
+2024-10-21 22:17:35,261 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x000002D9B1C280D0>
+2024-10-21 22:17:35,261 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x000002D9B388C880>>
+2024-10-21 22:17:35,261 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x000002D9B1CD5A90>>
+2024-10-21 22:17:35,261 - DEBUG - Event before-parameter-build.s3.HeadObject: calling handler <function generate_idempotent_uuid at 0x000002D9B1C23040>
+2024-10-21 22:17:35,261 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x000002D9B1C28280>
+2024-10-21 22:17:35,261 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x000002D9B388C880>>
+2024-10-21 22:17:35,261 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'ia-libretos', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'audios/_kvbBXcrOi4.mp3', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2024-10-21 22:17:35,262 - DEBUG - Endpoint provider result: https://ia-libretos.s3.amazonaws.com
+2024-10-21 22:17:35,262 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2024-10-21 22:17:35,262 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2024-10-21 22:17:35,262 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_expect_header at 0x000002D9B1C23550>
+2024-10-21 22:17:35,262 - DEBUG - Event before-call.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x000002D9B388C8B0>>
+2024-10-21 22:17:35,263 - DEBUG - Event before-call.s3.HeadObject: calling handler <function add_recursion_detection_header at 0x000002D9B1C17C10>
+2024-10-21 22:17:35,263 - DEBUG - Event before-call.s3.HeadObject: calling handler <function inject_api_version_header_if_needed at 0x000002D9B1C248B0>
+2024-10-21 22:17:35,263 - DEBUG - Making request for OperationModel(name=HeadObject) with params: {'url_path': '/audios/_kvbBXcrOi4.mp3', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'', 'auth_path': '/ia-libretos/audios/_kvbBXcrOi4.mp3', 'url': 'https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002D9B375DFA0>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 's3_redirect': {'redirected': False, 'bucket': 'ia-libretos', 'params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}}, 'input_params': {'Bucket': 'ia-libretos', 'Key': 'audios/_kvbBXcrOi4.mp3'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2024-10-21 22:17:35,263 - DEBUG - Event request-created.s3.HeadObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002D9B375DC70>>
+2024-10-21 22:17:35,263 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000002D9B1CD5A90>>
+2024-10-21 22:17:35,264 - DEBUG - Event choose-signer.s3.HeadObject: calling handler <function set_operation_specific_signer at 0x000002D9B1C17E50>
+2024-10-21 22:17:35,264 - DEBUG - Event before-sign.s3.HeadObject: calling handler <function remove_arn_from_signing_path at 0x000002D9B1C281F0>
+2024-10-21 22:17:35,264 - DEBUG - Event before-sign.s3.HeadObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x000002D9B388C8B0>>
+2024-10-21 22:17:35,264 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:17:35,264 - DEBUG - CanonicalRequest:
+HEAD
+/audios/_kvbBXcrOi4.mp3
+
+host:ia-libretos.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20241022T031735Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2024-10-21 22:17:35,264 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031735Z
+20241022/us-east-1/s3/aws4_request
+65a51ce5e2237faa04e7e4faf612b5c7ec42b077eeea839393e4185529ff311d
+2024-10-21 22:17:35,264 - DEBUG - Signature:
+868987f1033eee034b293beecaa70656a18fd7e5ecb7a63b592ae14a23904658
+2024-10-21 22:17:35,264 - DEBUG - Event request-created.s3.HeadObject: calling handler <function add_retry_headers at 0x000002D9B1C28040>
+2024-10-21 22:17:35,265 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=HEAD, url=https://ia-libretos.s3.amazonaws.com/audios/_kvbBXcrOi4.mp3, headers={'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031735Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=868987f1033eee034b293beecaa70656a18fd7e5ecb7a63b592ae14a23904658', 'amz-sdk-invocation-id': b'3a7a4ac7-947f-48b6-ae36-8832b3c0a361', 'amz-sdk-request': b'attempt=1'}>
+2024-10-21 22:17:35,265 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:17:35,765 - DEBUG - Event before-parse.s3.HeadObject: calling handler <function handle_expires_header at 0x000002D9B1C283A0>
+2024-10-21 22:17:35,766 - DEBUG - Response headers: {'x-amz-id-2': 'dl07aDcng+cuLKbKwLnFGLMJSgK6jG5e8/QzQ2WqWs0m2mp8fnblnXHRDGhlgIbCbgsrCebGxu0+64uaXXz1/RwRaUy8L7OdBsZiH4CV06k=', 'x-amz-request-id': '8EDGYARGWFFSD8BH', 'Date': 'Tue, 22 Oct 2024 03:17:34 GMT', 'Last-Modified': 'Mon, 21 Oct 2024 19:51:57 GMT', 'ETag': '"05d9f0e758daa2e8ed55421b2875c778-3"', 'x-amz-server-side-encryption': 'AES256', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Server': 'AmazonS3', 'Content-Length': '23201324'}
+2024-10-21 22:17:35,766 - DEBUG - Response body:
+b''
+2024-10-21 22:17:35,766 - DEBUG - Event needs-retry.s3.HeadObject: calling handler <botocore.retryhandler.RetryHandler object at 0x000002D9B388C7F0>
+2024-10-21 22:17:35,766 - DEBUG - No retry needed.
+2024-10-21 22:17:35,767 - DEBUG - Event needs-retry.s3.HeadObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x000002D9B388C880>>
+2024-10-21 22:17:35,767 - INFO - El archivo ya está subido a S3: audios/_kvbBXcrOi4.mp3
+2024-10-21 22:17:35,767 - INFO - Audio subido a S3: s3://ia-libretos/audios/_kvbBXcrOi4.mp3
+2024-10-21 22:17:35,767 - INFO - Paso 3/5: Iniciando transcripción para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:35,767 - DEBUG - Event before-parameter-build.transcribe.GetTranscriptionJob: calling handler <function generate_idempotent_uuid at 0x000002D9B1C23040>
+2024-10-21 22:17:35,767 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+2024-10-21 22:17:35,767 - DEBUG - Endpoint provider result: https://transcribe.us-east-1.amazonaws.com
+2024-10-21 22:17:35,768 - DEBUG - Event before-call.transcribe.GetTranscriptionJob: calling handler <function add_recursion_detection_header at 0x000002D9B1C17C10>
+2024-10-21 22:17:35,768 - DEBUG - Event before-call.transcribe.GetTranscriptionJob: calling handler <function inject_api_version_header_if_needed at 0x000002D9B1C248B0>
+2024-10-21 22:17:35,768 - DEBUG - Making request for OperationModel(name=GetTranscriptionJob) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'Transcribe.GetTranscriptionJob', 'Content-Type': 'application/x-amz-json-1.1', 'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'{"TranscriptionJobName": "transcripcion-_kvbBXcrOi4"}', 'url': 'https://transcribe.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002D9B33F3640>, 'has_streaming_input': False, 'auth_type': None, 'unsigned_payload': None}}
+2024-10-21 22:17:35,768 - DEBUG - Event request-created.transcribe.GetTranscriptionJob: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002D9B33F3550>>
+2024-10-21 22:17:35,768 - DEBUG - Event choose-signer.transcribe.GetTranscriptionJob: calling handler <function set_operation_specific_signer at 0x000002D9B1C17E50>
+2024-10-21 22:17:35,768 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:17:35,769 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.1
+host:transcribe.us-east-1.amazonaws.com
+x-amz-date:20241022T031735Z
+x-amz-target:Transcribe.GetTranscriptionJob
+
+content-type;host;x-amz-date;x-amz-target
+1b8d67dde93b104dcaf0018c4e30948f7ae526fb601353963db5bb16e4efca46
+2024-10-21 22:17:35,769 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031735Z
+20241022/us-east-1/transcribe/aws4_request
+ab267bbb5eb5958080784d62a652f27b5418d2c7f619b734ee49cdaa05c2b8a2
+2024-10-21 22:17:35,769 - DEBUG - Signature:
+e0a1c20f8419f6ddb97af0f63e590f460e8586d95fb18889a74fd617087c35c5
+2024-10-21 22:17:35,769 - DEBUG - Event request-created.transcribe.GetTranscriptionJob: calling handler <function add_retry_headers at 0x000002D9B1C28040>
+2024-10-21 22:17:35,769 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://transcribe.us-east-1.amazonaws.com/, headers={'X-Amz-Target': b'Transcribe.GetTranscriptionJob', 'Content-Type': b'application/x-amz-json-1.1', 'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031735Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/transcribe/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=e0a1c20f8419f6ddb97af0f63e590f460e8586d95fb18889a74fd617087c35c5', 'amz-sdk-invocation-id': b'5a68bbcb-0126-4c8e-ac3c-b3a4b1d35ca6', 'amz-sdk-request': b'attempt=1', 'Content-Length': '53'}>
+2024-10-21 22:17:35,769 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:17:36,486 - DEBUG - Response headers: {'x-amzn-RequestId': 'f0b1ab19-24ea-462a-a0be-a0316cbe8656', 'Content-Type': 'application/x-amz-json-1.1', 'Content-Length': '2418', 'Date': 'Tue, 22 Oct 2024 03:17:33 GMT'}
+2024-10-21 22:17:36,486 - DEBUG - Response body:
+b'{"TranscriptionJob":{"CompletionTime":1.729540429781E9,"CreationTime":1.729540331076E9,"IdentifiedLanguageScore":0.9977017641067505,"IdentifyLanguage":true,"LanguageCode":"es-ES","LanguageOptions":["en-US","es-ES"],"Media":{"MediaFileUri":"s3://ia-libretos/audios/_kvbBXcrOi4.mp3"},"MediaFormat":"mp3","MediaSampleRateHertz":48000,"Settings":{"ChannelIdentification":false,"ShowAlternatives":false},"StartTime":1.729540331107E9,"Transcript":{"TranscriptFileUri":"https://s3.us-east-1.amazonaws.com/aws-transcribe-us-east-1-prod/533267078590/transcripcion-_kvbBXcrOi4/e08b99fd-4d54-4a6f-bef7-546682c048db/asrOutput.json?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLWVhc3QtMSJHMEUCIGo%2BSMg%2BvnMjuK%2BxsFXcaa1ZUv7T68tqKymeEI91OklqAiEAt0jqPIejaYMQvp2k20PmMfkNvPdWGcC8ppNIORvartcquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgwyNzY2NTY0MzMxNTMiDK3CTrZf%2FAb5LfBVISqPBS9sSeSRfaDM50C4L9wjPkrZvnr3nozec%2FmgNGxSSY1PLvfRcpUNuohRjG6qJQlFW0pB6AOo6HQKIKfCE5PK2l2Efe%2BuX4zsBW0oK4T1%2BFifecsLrVJ2UTUVwIkTN37Ax40iUhhWU8Kylv5cXjaIASF9c7AA%2FkViyHeEFIrf68Pur3rt1CI0IxE%2BMps7gyCqkqmER%2F85MDAKJAIcOlWVW1LYBRyR4OF5ywrVDqgX2JQYO5CKWTKC1RKkc6lmHp7aVm1KiaOiJ9oq7I3Wcwqn%2FBv9nwHvNCWaExtRdmQh1VflLETsojq0I1Pg8OJ81xLMBTpb98mhzPuaRLke61sEEpwYqh9iQzeK2kYxKlNnUHk6skH6qrQUBUvfsZGVvhGF1PZOaZaswFAyjs9Ls9ZyHp6aKlduzwSsd4%2FwSU0H2xspBV4%2FnXnMcmY4H7hL%2FzhznyrjvCg8m6g2HrveuvzlwgRsyDbXDUmrHcrlKX9jU1tL3lVKiNOf0APg4%2FFO1%2Fjj2oH3XYHVsW6Yn4Hs1sN6Qv8SMOAmpznc1pK9dk3BH%2BNRNn0XHKr%2F%2FTFZ73iFJFXMTf8a5C5svaeRzaODlHebEB8qMKCh9QhuesUdoT%2BWNJ3DGiFrqjsQINGKTx9dtRxEP7Ueou7smjGRyX8ehZD%2FG53pOHy13rl192mgHZYCsxdtfonK0WWWIeu%2Fz67h%2F4k4ARS%2BkuklpX%2FZNQ%2BYk5ygmVjev69NHt%2B6RZB7H4Pgy0nGXYidx%2B5m4KOSKcSOhf%2Bz%2BK0VOLNOKHY5g3kJ31raXQuhKuhYRH8icUh9Mn1CVxrPzJ7%2B3oCgCsc4C%2BpzbNPUgXhTblKB1fXm65eJy%2B%2FKeBSGrQfp0ZbT0cov0VnquyswiZPcuAY6sQHADrSVZT5g2dSu1xJQcCjU5DFOtPfEmP46WhdO46H9qWrf1URmGg%2FPZVAzntV7ELP0UXLsdGiH9DO%2FBeVNwj1SVR0VxSB23bUce5AU1WRLhAB89K8KehrzvqRBcI1yqd8I627nW3x0FFCR0kw%2FmPad%2BZ4iEfzokFG7ZnI%2F16CTFfrCSlZQR6MYtdOlDcVaqVQL%2BtTn3mvM0uQ6F1WlRomWFUx06U86nsM4gRKwfPLF6eQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241022T031733Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIAUA2QCFAA2PZR3EIJ%2F20241022%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=8c27f1f1cb4515180e1064d3b0060ad0f5577500320fb91b241e2102fd29923c"},"TranscriptionJobName":"transcripcion-_kvbBXcrOi4","TranscriptionJobStatus":"COMPLETED"}}'
+2024-10-21 22:17:36,487 - DEBUG - Event needs-retry.transcribe.GetTranscriptionJob: calling handler <botocore.retryhandler.RetryHandler object at 0x000002D9B341CC10>
+2024-10-21 22:17:36,487 - DEBUG - No retry needed.
+2024-10-21 22:17:36,487 - INFO - El trabajo de transcripción 'transcripcion-_kvbBXcrOi4' ya existe y está completado.
+2024-10-21 22:17:36,487 - INFO - Transcripción iniciada: transcripcion-_kvbBXcrOi4
+2024-10-21 22:17:36,488 - INFO - Paso 4/5: Obteniendo transcripción para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:36,488 - DEBUG - Event before-parameter-build.transcribe.GetTranscriptionJob: calling handler <function generate_idempotent_uuid at 0x000002D9B1C23040>
+2024-10-21 22:17:36,488 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+2024-10-21 22:17:36,488 - DEBUG - Endpoint provider result: https://transcribe.us-east-1.amazonaws.com
+2024-10-21 22:17:36,488 - DEBUG - Event before-call.transcribe.GetTranscriptionJob: calling handler <function add_recursion_detection_header at 0x000002D9B1C17C10>
+2024-10-21 22:17:36,488 - DEBUG - Event before-call.transcribe.GetTranscriptionJob: calling handler <function inject_api_version_header_if_needed at 0x000002D9B1C248B0>
+2024-10-21 22:17:36,488 - DEBUG - Making request for OperationModel(name=GetTranscriptionJob) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'Transcribe.GetTranscriptionJob', 'Content-Type': 'application/x-amz-json-1.1', 'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'{"TranscriptionJobName": "transcripcion-_kvbBXcrOi4"}', 'url': 'https://transcribe.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002D9B33F3640>, 'has_streaming_input': False, 'auth_type': None, 'unsigned_payload': None}}
+2024-10-21 22:17:36,488 - DEBUG - Event request-created.transcribe.GetTranscriptionJob: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002D9B33F3550>>
+2024-10-21 22:17:36,488 - DEBUG - Event choose-signer.transcribe.GetTranscriptionJob: calling handler <function set_operation_specific_signer at 0x000002D9B1C17E50>
+2024-10-21 22:17:36,488 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:17:36,489 - DEBUG - CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.1
+host:transcribe.us-east-1.amazonaws.com
+x-amz-date:20241022T031736Z
+x-amz-target:Transcribe.GetTranscriptionJob
+
+content-type;host;x-amz-date;x-amz-target
+1b8d67dde93b104dcaf0018c4e30948f7ae526fb601353963db5bb16e4efca46
+2024-10-21 22:17:36,489 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031736Z
+20241022/us-east-1/transcribe/aws4_request
+558e1e0aa4ca3e584103bad9b91fed65ddfcd8e8b6059b8f3291a20f36b255f7
+2024-10-21 22:17:36,489 - DEBUG - Signature:
+dbd93a2488ea086a3a4f22903ea7e4cac25e82bc42e50ae556e912cdc1dd306e
+2024-10-21 22:17:36,489 - DEBUG - Event request-created.transcribe.GetTranscriptionJob: calling handler <function add_retry_headers at 0x000002D9B1C28040>
+2024-10-21 22:17:36,489 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://transcribe.us-east-1.amazonaws.com/, headers={'X-Amz-Target': b'Transcribe.GetTranscriptionJob', 'Content-Type': b'application/x-amz-json-1.1', 'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031736Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/transcribe/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=dbd93a2488ea086a3a4f22903ea7e4cac25e82bc42e50ae556e912cdc1dd306e', 'amz-sdk-invocation-id': b'3c1ed1d3-a480-4427-995c-065c6615c318', 'amz-sdk-request': b'attempt=1', 'Content-Length': '53'}>
+2024-10-21 22:17:36,489 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:17:36,628 - DEBUG - Response headers: {'x-amzn-RequestId': '8c0db90a-d7e7-452c-9daf-6d2a8fd5c720', 'Content-Type': 'application/x-amz-json-1.1', 'Content-Length': '2418', 'Date': 'Tue, 22 Oct 2024 03:17:33 GMT'}
+2024-10-21 22:17:36,628 - DEBUG - Response body:
+b'{"TranscriptionJob":{"CompletionTime":1.729540429781E9,"CreationTime":1.729540331076E9,"IdentifiedLanguageScore":0.9977017641067505,"IdentifyLanguage":true,"LanguageCode":"es-ES","LanguageOptions":["en-US","es-ES"],"Media":{"MediaFileUri":"s3://ia-libretos/audios/_kvbBXcrOi4.mp3"},"MediaFormat":"mp3","MediaSampleRateHertz":48000,"Settings":{"ChannelIdentification":false,"ShowAlternatives":false},"StartTime":1.729540331107E9,"Transcript":{"TranscriptFileUri":"https://s3.us-east-1.amazonaws.com/aws-transcribe-us-east-1-prod/533267078590/transcripcion-_kvbBXcrOi4/e08b99fd-4d54-4a6f-bef7-546682c048db/asrOutput.json?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLWVhc3QtMSJHMEUCIGo%2BSMg%2BvnMjuK%2BxsFXcaa1ZUv7T68tqKymeEI91OklqAiEAt0jqPIejaYMQvp2k20PmMfkNvPdWGcC8ppNIORvartcquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgwyNzY2NTY0MzMxNTMiDK3CTrZf%2FAb5LfBVISqPBS9sSeSRfaDM50C4L9wjPkrZvnr3nozec%2FmgNGxSSY1PLvfRcpUNuohRjG6qJQlFW0pB6AOo6HQKIKfCE5PK2l2Efe%2BuX4zsBW0oK4T1%2BFifecsLrVJ2UTUVwIkTN37Ax40iUhhWU8Kylv5cXjaIASF9c7AA%2FkViyHeEFIrf68Pur3rt1CI0IxE%2BMps7gyCqkqmER%2F85MDAKJAIcOlWVW1LYBRyR4OF5ywrVDqgX2JQYO5CKWTKC1RKkc6lmHp7aVm1KiaOiJ9oq7I3Wcwqn%2FBv9nwHvNCWaExtRdmQh1VflLETsojq0I1Pg8OJ81xLMBTpb98mhzPuaRLke61sEEpwYqh9iQzeK2kYxKlNnUHk6skH6qrQUBUvfsZGVvhGF1PZOaZaswFAyjs9Ls9ZyHp6aKlduzwSsd4%2FwSU0H2xspBV4%2FnXnMcmY4H7hL%2FzhznyrjvCg8m6g2HrveuvzlwgRsyDbXDUmrHcrlKX9jU1tL3lVKiNOf0APg4%2FFO1%2Fjj2oH3XYHVsW6Yn4Hs1sN6Qv8SMOAmpznc1pK9dk3BH%2BNRNn0XHKr%2F%2FTFZ73iFJFXMTf8a5C5svaeRzaODlHebEB8qMKCh9QhuesUdoT%2BWNJ3DGiFrqjsQINGKTx9dtRxEP7Ueou7smjGRyX8ehZD%2FG53pOHy13rl192mgHZYCsxdtfonK0WWWIeu%2Fz67h%2F4k4ARS%2BkuklpX%2FZNQ%2BYk5ygmVjev69NHt%2B6RZB7H4Pgy0nGXYidx%2B5m4KOSKcSOhf%2Bz%2BK0VOLNOKHY5g3kJ31raXQuhKuhYRH8icUh9Mn1CVxrPzJ7%2B3oCgCsc4C%2BpzbNPUgXhTblKB1fXm65eJy%2B%2FKeBSGrQfp0ZbT0cov0VnquyswiZPcuAY6sQHADrSVZT5g2dSu1xJQcCjU5DFOtPfEmP46WhdO46H9qWrf1URmGg%2FPZVAzntV7ELP0UXLsdGiH9DO%2FBeVNwj1SVR0VxSB23bUce5AU1WRLhAB89K8KehrzvqRBcI1yqd8I627nW3x0FFCR0kw%2FmPad%2BZ4iEfzokFG7ZnI%2F16CTFfrCSlZQR6MYtdOlDcVaqVQL%2BtTn3mvM0uQ6F1WlRomWFUx06U86nsM4gRKwfPLF6eQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241022T031734Z&X-Amz-SignedHeaders=host&X-Amz-Expires=899&X-Amz-Credential=ASIAUA2QCFAA2PZR3EIJ%2F20241022%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1c459deb53c53e7b333fb042f38ed359650323c1ecde0c4b4fc0e4a19d97b943"},"TranscriptionJobName":"transcripcion-_kvbBXcrOi4","TranscriptionJobStatus":"COMPLETED"}}'
+2024-10-21 22:17:36,629 - DEBUG - Event needs-retry.transcribe.GetTranscriptionJob: calling handler <botocore.retryhandler.RetryHandler object at 0x000002D9B341CC10>
+2024-10-21 22:17:36,629 - DEBUG - No retry needed.
+2024-10-21 22:17:38,149 - INFO - Transcripción obtenida: mi amor. Estás ahí? Hola, mi amor. Sí, aquí estoy, mi amor. Qué felicidad! En tan solo unos minutos vamos a ser marido y mujer. Ay, amor, yo también estoy tan feliz. Es como un sueño hecho realidad casarme contigo aunque no te pueda ver. Me imagino que estás hermoso. No es que si tuvieras lo que tienes al frente te sorprendería. Quiero aprovechar este momento antes de casarnos para decirte que Gracias. Gracias por aceptarme así tal cual, como yo soy Te prometo que te voy a ser la mujer más feliz del mundo, mi amor. Y no te imaginas cómo me estoy sintiendo En este momento estoy tan pero tan complacida Tengo tanto deseo de de casarme contigo. Eso me hace muy feliz, mi amor. Vamos. Sí, mi amor. Vamos. Pero antes regáleme un besito. Sí, mi amor. Sigues ahí? Sí, sí. Aquí estoy, mi amor. Ahora sí Vamos. Sí, vamos, que por aquí, mi amor, La izquierda Un poquito más. Un poquito más. Sí, mi amor. Ya llegamos. Sí, sí, ya estamos en la cama. Estamos en la cama. Sí, sí. Ok U aquí, mi amor. Aquí estoy. Aquí estoy. Aquí estoy, mi amor, aquí estoy aquí estoy, mi amor. Ahora sí vamos a disfrutar de nuestra noche de esposas. Quién es Silvana? Tu hermana. Adelante. Ay, que pueda interrumpirlo en su noche romántica, pero ay, se oían tan lindos en el altar hoy estoy tan feliz de que se hayan casado. Gracias, hermanita. Nosotros también estamos muy felices. Cierto, mi amor? Sí, estamos muy contentos. Ay, pero Paola, mira como estás muy cansada tiene las ojeras súper marcadas. Yo creo que deberían descansar. Sí, yo estoy tan cansada. No te imaginas estos tacones todo el día. Estoy agotada. Aparte que madrugue demasiado hoy. Entonces estoy sin nada de energía. Bueno, entonces yo los dejo porque me imagino que van a tener su noche romántica y deben descansar chavos. Chao, hermanita. Cuídate mi amor. Sabes Si, si estás muy cansada, No te preocupes, yo quiero la verdad. Que tú descanses y que te sientas bien cuando lo hagamos. Entonces yo creo que lo mejor es que lo dejemos para otro momento. Te parece? Ay, sí, mi amor. Es que la verdad, yo quiero estar al cien por ciento para ti y en este momento estoy muy cansada. Entonces descansa. Tú también, mi amor. Yo te ayudo. Vamos Buenas noches, mi amor. Qué, mi amor? Ya mi amor me memoria de suerte. Usted sí, mi amor. Qué pasó, amor? Tengo una cita muy importante hoy. Creo que iré ya al baño. No puedo perder la cita y no puedo llegar tarde. Sí, sí. No te preocupes. No pasa nada. Tú, tú qué vas a hacer hoy? Me voy a quedar en la cama todo el día. Está bien, mi princesa. Mereces descansar después del día de ayer. Sí, mi amor. Yo voy tarde. Descansa, mi amor. Usted me está diciendo que estoy empeorando. O sea que no tengo nada más que perder. Mmm uno doctora, quiero hacerlo. Lo único que sí le quiero pedir es que no le cuente a Paola. Ella se pondría muy nerviosa. Quiero discreción. Voy a una cita. Está bien, Mark. Voy a agendarlo de una vez. Entonces, Esposito, cómo te fue, mi amor? Muy bien. Y tú? Bien, mi amor. Y eso Dónde estabas, mi amor? Estaba en una reunión de negocios. Y eso, mi amor. Cómo te fue? Muy bien. De hecho, mejor de lo que esperaba. Tengo que contarte algo importante, pero sentémonos. Sí, mi amor. Claro. Ven por aquí. Mi amor, Ven por aquí. Eso. Cuéntame. Qué pasó, mi amor? Mira, yo sé que llevamos muy poco tiempo de casados, pero tengo que contarte algo. Tengo que hacer un viaje de negocios muy importante. Así que me voy la próxima semana. Ay, qué pesar, mi amor, Tú no te imaginas para mí cómo es de difícil estar sin ti. Ay, mi amor. Para mí también es muy difícil. Si por mí fuera yo yo mantendría pegadito del lado tuyo todo el día. Pero ya ves como son las cosas. Sí, mi amor ni modo. Trabajo es trabajo y tú me prometiste que me ibas a tratar como una reina. Así que espero que te vaya muy bien en tus negocios y que vengas lleno de dólares. Así va a ser mi amor. De hecho, quiero que sepas que puedes estar tranquila Mientras estés conmigo, Nada te va a faltar. Mi amor, mi amor. Ya llegaste? Sí, mi amor soy yo, que suena así, mi amor. La maleta es Silvana. Ah, Silvana, Qué haces aquí? Hola, hermanito. Cómo estás? Muy bien. Es que le dije a Silvi que tú te llevas una semana completa y le dije que se quedara aquí conmigo en la casa para no estar solito. Y por supuesto, le dije que sí. Además, desde que se casaron, mi abuela es como mi hermanita. Bueno, qué rico, hermanita. La verdad, yo quedo mucho más tranquilo si tú te quedas con Paola. Tú sabes que ella es mi tesoro. Yo te la voy a cuidar muy bien. Día y noche voy a estar con ella. Vamos a hacer como uña y mugre. Me alegro bastante. Bueno, le voy a mostrar la habitación a Spano para que ella se instale. Está bien, mi amor. Yo voy de salida. Listo? Ahorita te llamo. Que te vaya bien, mi amor. Chao, hermanito. Que te vaya muy bien, Marlowe. Ya tenemos todo listo en la sala de cirugía. Está preparada, doctora? La verdad es que estoy muy asustado. Estoy muy nervioso. Me imagino, Marlow, yo solo le pido a Dios que todo esto salga bien. Él va a cuidarlo, Marlon. Ahora sólo respire profundo. Y aunque sé que es difícil, trate de tranquilizarse, pero piense en su mujer. Hágalo por ella. Lo voy a hacer por ella porque es una mujer maravillosa porque merece tener un marido completo. Mi esposa será la mujer más feliz del mundo cuando me vea sano, Paola a mi ama tanto como yo a ella y quiere lo mejor para mí. Cuando pueda volver a ver, estaremos mejor que nunca. Será como vivir en una luna de miel. Todo esto es una motivación para usted, para que esté positivo en todo. Todo va a salir muy bien, Marlyn. Créame, Ahora va Sí. Cómo se siente, Marlon? Doctora, Estoy muy nerviosa. Tengo mucho miedo. Lo sé. Ahora vamos a saber si la operación funcionó o no. Sí, A ver, vamos a sentarnos. Vamos a hacer lo siguiente, Marlen, Yo voy a quitarle las vendas muy despacio. Por favor, no abra los ojos hasta que no se lo diga, Sí? No veo nada, doctora. Todo está oscuro. La presión no funcionó. Doctor, Cálmese, Marlon, Cálmese, por favor. Espere, Estoy Estoy viendo algo. Doctora, estoy viendo algo. Estoy viendo, doctora. Mis manos, Doctora, La estoy viendo. La estoy viendo. Doctora Marlow! Funcionó. Sió, Marlon! La operación fue un éxito, doctora. Gracias. No sabe lo que acabas de hacer por mí, mi amor. Amor, estás ahí? Sí, mi amor. Aquí estoy. Llegaste más temprano. Pensé que me ibas a avisar antes de venir. Y dónde están las gafas? Y tú vas sola? Creo que los dejé en la sala de la moción. Pero oye, hay un aroma diferente aquí. Con quién estás? No, no, yo estoy sola de pronto porque me apliqué el perfume de Silvana y de pronto estás confundido. Y Silvana, dónde está? Está con un amigo. Eso me dijo. Pero yo creo que es como el novio. Igual Eso no importa, mi amor, Ven que aquí lo que importa realmente es que ya llegaste y estás aquí conmigo, mi amor, Tenía tantas ganas de abrazarte La esposa más hermosa y más fiel uno Silvana Paola G. Hermanito. Quiero contarles que me fue muy bien en el viaje. Más bien de lo que yo pensaba. Cómo les parece que hice un contrato millonario con una empresa al exterior? Sí, eso quiere decir que vas a ganar más dinero. Así es. Y no sólo eso. Quiero que a partir de hoy ustedes dos sean mis socias. Quiero darles un cargo importante en la empresa que reciban muy buen dinero de por medio. Algo así como unas gentes tal cual cuenta conmigo, Herman. Y por supuesto, conmigo también, mi amor, tú sabes que siempre te voy a apoyar en todo. Gracias por tenernos en cuenta. Pero cómo no voy a tener en cuenta a las dos mujeres más importantes de mi vida? Es más, a partir de mañana voy a empezar con los preparativos para la contratación de ustedes dos en la empresa. Mi amor, Por qué nos citaste aquí? Quería adelantar la contratación de ustedes dos a la empresa. Quiero que a partir de ese momento ustedes dos sean las directoras comerciales del área de producción. Solamente tiene que firmar y listo. Okey, será todo un hecho. Mmm uno. Oye, hermanito, estoy segura de que no te vas a arrepentir de esto. Yo también estoy muy seguro de que no me voy a arrepentir aquí Las únicas personas que se van a arrepentir son ustedes dos. Qué? Por cierto, mi amor, Qué bonito te queda ese vestido negro. Ay, muchas gracias. Qué? Tú? Cómo sabes que soy de negro? Puedes ver? Sí, no fui a ningún viaje de negocios. Me sometí a una cirugía bastante riesgosa para recuperar mi vista que por suerte fue un éxito. Pero lo primero que veo cuando llego a mi casa es a mi esposa acostada con mi hermana en mi misma cama. Pero de qué estás hablando? Seguro No está haciendo bien. Sí, seguramente tampoco estaba viendo bien cuando se estaban acariciando y estaban jugando con la comida en mi propia cara. Ustedes no pueden seguir pensando que yo soy el mismo de siempre. No se puede seguir burlando de mí. Eso les va a salir muy caro. O sea que lo que los hiciste firmar no es un contrato de trabajo, cierto? Qué inteligente eres, hermanita! Paola me acaba de firmar el divorcio. Y también renunció a toda la mitad de mis bienes. Qué? No, no, eso no puede ser. Y tu hermanita? Me acabas de ceder tu parte de la casa de nuestros padres. No, No me puedes hacer esto. Te aguanté tres años. No me puedes dejar sin nada. Yo vivo en esa casa. No me puedes sacar de ahí. Vivías? Vivías, hermanito, porque a partir de ese momento te va a tocar buscar un lugar debajo de un puente. Pero tranquila, hermanita. No vas a estar sola porque Paola te puede hacer compañía. Paola, a partir de este momento se larga de mi casa. No, Pero si yo soy el amor de tu vida. Yo soy tu sangre, lárguense, pero no lárguense en el juego de la vida. La lealtad es la única carta que garantiza una victoria duradera basado en una historia real. Hola a todos. Nosotros somos actores de felicidad y el día de hoy les queremos contar que todo lo que acabaron de ver fue guionizado y dramatizado. Ninguno de nosotros sufre daño físico ni psicológico. Felicidad no promueve ningún tipo de violencia. Nos vemos en un próximo video. Chao.
+2024-10-21 22:17:38,151 - INFO - Transcripción limpia: mi amor Estás ahí Hola mi amor Sí aquí estoy mi amor Qué felicidad En tan solo unos minutos vamos a ser marido y mujer Ay amor yo también estoy tan feliz Es como un sueño hecho realidad casarme contigo aunque no te pueda ver Me imagino que estás hermoso No es que si tuvieras lo que tienes al frente te sorprendería Quiero aprovechar este momento antes de casarnos para decirte que Gracias Gracias por aceptarme así tal cual como yo soy Te prometo que te voy a ser la mujer más feliz del mundo mi amor Y no te imaginas cómo me estoy sintiendo En este momento estoy tan pero tan complacida Tengo tanto deseo de de casarme contigo Eso me hace muy feliz mi amor Vamos Sí mi amor Vamos Pero antes regáleme un besito Sí mi amor Sigues ahí Sí sí Aquí estoy mi amor Ahora sí Vamos Sí vamos que por aquí mi amor La izquierda Un poquito más Un poquito más Sí mi amor Ya llegamos Sí sí ya estamos en la cama Estamos en la cama Sí sí Ok U aquí mi amor Aquí estoy Aquí estoy Aquí estoy mi amor aquí estoy aquí estoy mi amor Ahora sí vamos a disfrutar de nuestra noche de esposas Quién es Silvana Tu hermana Adelante Ay que pueda interrumpirlo en su noche romántica pero ay se oían tan lindos en el altar hoy estoy tan feliz de que se hayan casado Gracias hermanita Nosotros también estamos muy felices Cierto mi amor Sí estamos muy contentos Ay pero Paola mira como estás muy cansada tiene las ojeras súper marcadas Yo creo que deberían descansar Sí yo estoy tan cansada No te imaginas estos tacones todo el día Estoy agotada Aparte que madrugue demasiado hoy Entonces estoy sin nada de energía Bueno entonces yo los dejo porque me imagino que van a tener su noche romántica y deben descansar chavos Chao hermanita Cuídate mi amor Sabes Si si estás muy cansada No te preocupes yo quiero la verdad Que tú descanses y que te sientas bien cuando lo hagamos Entonces yo creo que lo mejor es que lo dejemos para otro momento Te parece Ay sí mi amor Es que la verdad yo quiero estar al cien por ciento para ti y en este momento estoy muy cansada Entonces descansa Tú también mi amor Yo te ayudo Vamos Buenas noches mi amor Qué mi amor Ya mi amor me memoria de suerte Usted sí mi amor Qué pasó amor Tengo una cita muy importante hoy Creo que iré ya al baño No puedo perder la cita y no puedo llegar tarde Sí sí No te preocupes No pasa nada Tú tú qué vas a hacer hoy Me voy a quedar en la cama todo el día Está bien mi princesa Mereces descansar después del día de ayer Sí mi amor Yo voy tarde Descansa mi amor Usted me está diciendo que estoy empeorando O sea que no tengo nada más que perder Mmm uno doctora quiero hacerlo Lo único que sí le quiero pedir es que no le cuente a Paola Ella se pondría muy nerviosa Quiero discreción Voy a una cita Está bien Mark Voy a agendarlo de una vez Entonces Esposito cómo te fue mi amor Muy bien Y tú Bien mi amor Y eso Dónde estabas mi amor Estaba en una reunión de negocios Y eso mi amor Cómo te fue Muy bien De hecho mejor de lo que esperaba Tengo que contarte algo importante pero sentémonos Sí mi amor Claro Ven por aquí Mi amor Ven por aquí Eso Cuéntame Qué pasó mi amor Mira yo sé que llevamos muy poco tiempo de casados pero tengo que contarte algo Tengo que hacer un viaje de negocios muy importante Así que me voy la próxima semana Ay qué pesar mi amor Tú no te imaginas para mí cómo es de difícil estar sin ti Ay mi amor Para mí también es muy difícil Si por mí fuera yo yo mantendría pegadito del lado tuyo todo el día Pero ya ves como son las cosas Sí mi amor ni modo Trabajo es trabajo y tú me prometiste que me ibas a tratar como una reina Así que espero que te vaya muy bien en tus negocios y que vengas lleno de dólares Así va a ser mi amor De hecho quiero que sepas que puedes estar tranquila Mientras estés conmigo Nada te va a faltar Mi amor mi amor Ya llegaste Sí mi amor soy yo que suena así mi amor La maleta es Silvana Ah Silvana Qué haces aquí Hola hermanito Cómo estás Muy bien Es que le dije a Silvi que tú te llevas una semana completa y le dije que se quedara aquí conmigo en la casa para no estar solito Y por supuesto le dije que sí Además desde que se casaron mi abuela es como mi hermanita Bueno qué rico hermanita La verdad yo quedo mucho más tranquilo si tú te quedas con Paola Tú sabes que ella es mi tesoro Yo te la voy a cuidar muy bien Día y noche voy a estar con ella Vamos a hacer como uña y mugre Me alegro bastante Bueno le voy a mostrar la habitación a Spano para que ella se instale Está bien mi amor Yo voy de salida Listo Ahorita te llamo Que te vaya bien mi amor Chao hermanito Que te vaya muy bien Marlowe Ya tenemos todo listo en la sala de cirugía Está preparada doctora La verdad es que estoy muy asustado Estoy muy nervioso Me imagino Marlow yo solo le pido a Dios que todo esto salga bien Él va a cuidarlo Marlon Ahora sólo respire profundo Y aunque sé que es difícil trate de tranquilizarse pero piense en su mujer Hágalo por ella Lo voy a hacer por ella porque es una mujer maravillosa porque merece tener un marido completo Mi esposa será la mujer más feliz del mundo cuando me vea sano Paola a mi ama tanto como yo a ella y quiere lo mejor para mí Cuando pueda volver a ver estaremos mejor que nunca Será como vivir en una luna de miel Todo esto es una motivación para usted para que esté positivo en todo Todo va a salir muy bien Marlyn Créame Ahora va Sí Cómo se siente Marlon Doctora Estoy muy nerviosa Tengo mucho miedo Lo sé Ahora vamos a saber si la operación funcionó o no Sí A ver vamos a sentarnos Vamos a hacer lo siguiente Marlen Yo voy a quitarle las vendas muy despacio Por favor no abra los ojos hasta que no se lo diga Sí No veo nada doctora Todo está oscuro La presión no funcionó Doctor Cálmese Marlon Cálmese por favor Espere Estoy Estoy viendo algo Doctora estoy viendo algo Estoy viendo doctora Mis manos Doctora La estoy viendo La estoy viendo Doctora Marlow Funcionó Sió Marlon La operación fue un éxito doctora Gracias No sabe lo que acabas de hacer por mí mi amor Amor estás ahí Sí mi amor Aquí estoy Llegaste más temprano Pensé que me ibas a avisar antes de venir Y dónde están las gafas Y tú vas sola Creo que los dejé en la sala de la moción Pero oye hay un aroma diferente aquí Con quién estás No no yo estoy sola de pronto porque me apliqué el perfume de Silvana y de pronto estás confundido Y Silvana dónde está Está con un amigo Eso me dijo Pero yo creo que es como el novio Igual Eso no importa mi amor Ven que aquí lo que importa realmente es que ya llegaste y estás aquí conmigo mi amor Tenía tantas ganas de abrazarte La esposa más hermosa y más fiel uno Silvana Paola G Hermanito Quiero contarles que me fue muy bien en el viaje Más bien de lo que yo pensaba Cómo les parece que hice un contrato millonario con una empresa al exterior Sí eso quiere decir que vas a ganar más dinero Así es Y no sólo eso Quiero que a partir de hoy ustedes dos sean mis socias Quiero darles un cargo importante en la empresa que reciban muy buen dinero de por medio Algo así como unas gentes tal cual cuenta conmigo Herman Y por supuesto conmigo también mi amor tú sabes que siempre te voy a apoyar en todo Gracias por tenernos en cuenta Pero cómo no voy a tener en cuenta a las dos mujeres más importantes de mi vida Es más a partir de mañana voy a empezar con los preparativos para la contratación de ustedes dos en la empresa Mi amor Por qué nos citaste aquí Quería adelantar la contratación de ustedes dos a la empresa Quiero que a partir de ese momento ustedes dos sean las directoras comerciales del área de producción Solamente tiene que firmar y listo Okey será todo un hecho Mmm uno Oye hermanito estoy segura de que no te vas a arrepentir de esto Yo también estoy muy seguro de que no me voy a arrepentir aquí Las únicas personas que se van a arrepentir son ustedes dos Qué Por cierto mi amor Qué bonito te queda ese vestido negro Ay muchas gracias Qué Tú Cómo sabes que soy de negro Puedes ver Sí no fui a ningún viaje de negocios Me sometí a una cirugía bastante riesgosa para recuperar mi vista que por suerte fue un éxito Pero lo primero que veo cuando llego a mi casa es a mi esposa acostada con mi hermana en mi misma cama Pero de qué estás hablando Seguro No está haciendo bien Sí seguramente tampoco estaba viendo bien cuando se estaban acariciando y estaban jugando con la comida en mi propia cara Ustedes no pueden seguir pensando que yo soy el mismo de siempre No se puede seguir burlando de mí Eso les va a salir muy caro O sea que lo que los hiciste firmar no es un contrato de trabajo cierto Qué inteligente eres hermanita Paola me acaba de firmar el divorcio Y también renunció a toda la mitad de mis bienes Qué No no eso no puede ser Y tu hermanita Me acabas de ceder tu parte de la casa de nuestros padres No No me puedes hacer esto Te aguanté tres años No me puedes dejar sin nada Yo vivo en esa casa No me puedes sacar de ahí Vivías Vivías hermanito porque a partir de ese momento te va a tocar buscar un lugar debajo de un puente Pero tranquila hermanita No vas a estar sola porque Paola te puede hacer compañía Paola a partir de este momento se larga de mi casa No Pero si yo soy el amor de tu vida Yo soy tu sangre lárguense pero no lárguense en el juego de la vida La lealtad es la única carta que garantiza una victoria duradera basado en una historia real Hola a todos Nosotros somos actores de felicidad y el día de hoy les queremos contar que todo lo que acabaron de ver fue guionizado y dramatizado Ninguno de nosotros sufre daño físico ni psicológico Felicidad no promueve ningún tipo de violencia Nos vemos en un próximo video Chao
+2024-10-21 22:17:38,152 - INFO - Paso 5/5: Generando sugerencias para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1
+2024-10-21 22:17:38,152 - DEBUG - Event before-parameter-build.bedrock-runtime.Converse: calling handler <function generate_idempotent_uuid at 0x000002D9B1C23040>
+2024-10-21 22:17:38,152 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+2024-10-21 22:17:38,153 - DEBUG - Endpoint provider result: https://bedrock-runtime.us-east-1.amazonaws.com
+2024-10-21 22:17:38,153 - DEBUG - Event before-call.bedrock-runtime.Converse: calling handler <function add_recursion_detection_header at 0x000002D9B1C17C10>
+2024-10-21 22:17:38,153 - DEBUG - Event before-call.bedrock-runtime.Converse: calling handler <function inject_api_version_header_if_needed at 0x000002D9B1C248B0>
+2024-10-21 22:17:38,153 - DEBUG - Making request for OperationModel(name=Converse) with params: {'url_path': '/model/anthropic.claude-3-5-sonnet-20240620-v1%3A0/converse', 'query_string': {}, 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44'}, 'body': b'{"messages": [{"role": "user", "content": [{"text": "\\nTu tarea es crear tres t\\u00edtulos para un video de YouTube en espa\\u00f1ol, dirigidos a un p\\u00fablico latinoamericano (M\\u00e9xico, Colombia, Per\\u00fa, etc.), basados en la transcripci\\u00f3n y el t\\u00edtulo actual que te proporciono. Los t\\u00edtulos deben cumplir con las pol\\u00edticas de YouTube y ser atractivos para captar la atenci\\u00f3n del espectador.\\n\\n1. **T\\u00edtulo 1 (Estructura de \\u00e9xito)**: El primer t\\u00edtulo debe seguir la **estructura** de los t\\u00edtulos exitosos proporcionados, manteniendo la idea central del video, pero con un formato similar a los siguientes ejemplos:\\n- \\"LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER\\"\\n- \\"SE DEJ\\u00d3 LLEVAR POR EL DESEO DE ESTE HOMBRE\\"\\n- \\"Nunca te metas con el hijo de un pandillero  #short\\"\\n- \\"LE HICIERON ESTO A LA VECINA BONITA, PERO LA VIDA LES DIO UNA LECCI\\u00d3N\\"\\n- \\"MI HERMANA ME TRAICIONO CON MI ESPOSA, EN MI PROPIA CARA\\"\\n- \\"MI HERMANA SE ENAMORO DE MI ESPOSA EN MI PROPIA CASA\\"\\n- \\"ME ENAMORE DE UN VAGABUNDO Y PASO A ESTO\\"\\n- \\"ENCUENTRO A MI ESPOSA EN UN MOTEL CON MI MEJOR AMIGO\\"\\n- \\"Encontre a mi esposo con mi mam\\u00e1 en mi cuarto\\"\\n- \\"MONJAS ENGA\\u00d1ARON A ESTOS POLICIAS DE ESTA MANERA\\"\\n- \\"NUNCA TE METAS CON EL HIJO DE UN PANDILLERO\\"\\n- \\"EMBARAZO A LA ESPOSA DE SU HIJO A ESCONDIDAS\\"\\n- \\"MUJER DESEABA A OTRO HOMBRE MIENTRAS EL TRABAJABA\\"\\n- \\"SE VOLVIO MILLONARIO DESPUES DE QUE SU ESPOSA LO DEJO Y TRAICIONO POR SER POBRE\\"\\n- \\"ESTE HOMBRE NOS QUERIA ALMORZAR\\"\\n- \\"ENCONTRO A SU ESPOSA CON UN JOVENCITO EN SU CAMA\\"\\n- \\"Ni\\u00f1a le cambio la vida a sus pap\\u00e1s y a su abuela \\"\\n- \\"MI CU\\u00d1ADO ME DESEABA Y SE ENAMORO DE MI\\"\\n- \\"SE ALMORZO AL CHOFER DE SU ESPOSO\\"\\n- \\"MI TIO SE ENAMORO DE MI DE ESTA MANERA\\"\\n- \\"SE APROVECHABA DE SU ESPOSO ENFERMO PARA ENTRAR AL VECINO\\"\\n- \\"LE FUI INFIEL A MI ESPOSA ENFERMA POR UNA M\\u00c1S JOV\\u00c9N\\"\\n- \\"MI NOVIO DESEA A MI MAM\\u00c1 EN MI PROPIA CASA\\"\\n- \\"LE FUE INFIEL A SU ESPOSO HUMILDE EN SU GRADO\\"\\n- \\"Chicas jovenes despreciaban a una abuela humilde vendedora de flores  #short\\"\\n- \\"Le regalo un carro y lo descubrio con otra mujer  #short\\"\\n- \\"Madre huye con su hija de su esposo por est\\u00e1 raz\\u00f3n  #short\\"\\n- \\"ESTA MUJER SE ALMORZO AL SOBRINO DE SU ESPOSO\\"\\n- \\"LO HUMILLABAN POR LIMPIAR VIDRIOS HASTA QUE SALVO LA VIDA DE UNA MUJER Y ESO CAMBIO SU VIDA\\"\\n- \\"MI JEFE SE ENAMORO DE MI Y ME ESPIABA A ESCONDIDAS\\"\\n- \\"MI VECINO ME VISITO A ESCONDIDAS\\"\\n- \\"SE METIO CON LA SUEGRA 20 A\\u00d1OS MAYOR QUE EL\\"\\n- \\"LE FUI INFIEL A MI ESPOSA CON LA EMPLEADA DE SERVICIOS\\"\\n- \\"MI CU\\u00d1ADA ENTRO A MI HABITACI\\u00d3N Y PAS\\u00d3 ESTO\\"\\n- \\"SE VISTI\\u00d3 DE LA VIRGEN PARA VER A SU ESPOSO ERA INFIEL CON UNA MUJER M\\u00c1S JOVEN\\"\\n- \\"PROFESOR SE ENAMORO DE UNA JOVEN UNIVERSITARIA\\"\\n- \\"CAMBIO A SU ESPOSO HUMILDE POR UN GRINGO\\"\\n- \\"MI ESPOSA SE ENAMORO DE MI PADRE\\"\\n- \\"ME METI CON LA VECINA A ESCONDIDAS\\"\\n- \\"ME ACOSTE CON LA ESPOSA DE MI HIJO\\"\\n- \\"ENCONTRO A SU ESPOSA CON SU AMANTE EN SU PROPIA CASA\\"\\n- \\"ESTA MUJER QUERIA DESHACERSE DE SU ESPOSO ENFERMO\\"\\n- \\"LA VECINA ME QUITO MI MARIDO EN MI PROPIA CARA\\"\\n- \\"MI SUEGRO SE HACIA EL ENFERMO PARA ENAMORARSE DE MI\\"\\n- \\"VAGABUNDO FUE JUZGADO POR SU APARIENCIA EN UN LUJOSO RESTAURANTE\\"\\n- \\"SU NOVIA LO DESPRECIO POR SER POBRE PERO LA VIDA LE DARIA UNA GRAN LECCI\\u00d3N\\"\\n- \\"TENGO UNA FANTASIA CON LA VECINA\\"\\n- \\"MI HERMANA ME QUERIA QUITAR A MI ESPOSO\\"\\n- \\"ESTE HOMBRE SE ENAMORABA DE SUS EMPLEADAS DE ESTA MANERA\\"\\n- \\"LE FUI INFIEL A MI ESPOSA CON SU MEJOR AMIGA\\"\\n- \\"ABANDONO A SU ESPOSO Y A SU HIJA RECIEN NACIDA POR SER MECANICO Y LA VIDA LE DIO UNA LECCION\\"\\n- \\"ABANDONO A SU ESPOSO DEL CAMPO POR IRSE CON SU AMANTE\\"\\n- \\"Se enamor\\u00f3 de mi la persona que menos pensaba. #short \\"\\n- \\"ENCONTRO A UNA MUJER EN SU CASA SIN NADA\\"\\n- \\"ENCONTRE A MI PRIMA EN LA CAMA CON MI ESPOSO\\"\\n- \\"LE FUE INFIEL A SU ESPOSO CON EL DUE\\u00d1O DE LA CASA\\"\\n- \\"SU JEFE LE DIO TODO EL AMOR A ESCONDIDAS\\"\\n- \\"CAMBIO A SU ESPOSO HUMILDE POR EL JEFE DE EL\\"\\n- \\"HOMBRE LE FUE INFIEL A SU ESPOSA CON UNA MUJER M\\u00c1S JOV\\u00c9N\\"\\n- \\"LE DEJO SU HERENCIA A SU HIJA ADOPTIVA PERO SUS HERMANOS NO LO PERMITIRIAN\\"\\n- \\"DESCUBRIO A SU HIJO CON LA EMPLEADA DOMESTICA Y LOS ECHO DE LA CASA\\"\\n- \\"EMBARAZO A SU AMANTE Y LE MINTIO A SU ESPOSA\\"\\n- \\"PERDIO A SU ESPOSA POR ESTA TERRIBLE ENFERMEDAD\\"\\n- \\"LE FUI INFIEL A MI ESPOSO CON EL PLOMERO\\"\\n\\n2. **T\\u00edtulo 2 (Intriga)**: El segundo t\\u00edtulo debe crear **intriga**, usando emociones como traici\\u00f3n, deseo, enga\\u00f1o o sorpresas familiares, pero sin revelar demasiado de la trama.\\n\\n3. **T\\u00edtulo 3 (Creativo y optimizado)**: El tercer t\\u00edtulo debe ser el m\\u00e1s **creativo** y **optimizado** para YouTube, cumpliendo con las pol\\u00edticas, sin ser clickbait, pero muy atractivo. Debes usar may\\u00fasculas en palabras clave importantes para captar la atenci\\u00f3n del espectador, pero no en todo el t\\u00edtulo. Este t\\u00edtulo debe ser breve y directo, pero lo suficientemente intrigante para generar curiosidad.\\n\\n4. **Resumen**: Tambi\\u00e9n proporciona un resumen **detallado** y **atractivo** para el video, que intrigue al espectador sin revelar demasiado de la trama, pero que lo invite a ver el contenido completo. Este resumen debe generar suspense y estar alineado con las pol\\u00edticas de las plataformas. Evita el uso de clickbait o contenido enga\\u00f1oso.\\n\\n**T\\u00edtulo Actual del Video:** LE FUE INFIEL A SU ESPOSO CIEGO CON UNA MUJER\\n**Transcripci\\u00f3n del Video:** mi amor Est\\u00e1s ah\\u00ed Hola mi amor S\\u00ed aqu\\u00ed estoy mi amor Qu\\u00e9 felicidad En tan solo unos minutos vamos a ser marido y mujer Ay amor yo tambi\\u00e9n estoy tan feliz Es como un sue\\u00f1o hecho realidad casarme contigo aunque no te pueda ver Me imagino que est\\u00e1s hermoso No es que si tuvieras lo que tienes al frente te sorprender\\u00eda Quiero aprovechar este momento antes de casarnos para decirte que Gracias Gracias por aceptarme as\\u00ed tal cual como yo soy Te prometo que te voy a ser la mujer m\\u00e1s feliz del mundo mi amor Y no te imaginas c\\u00f3mo me estoy sintiendo En este momento estoy tan pero tan complacida Tengo tanto deseo de de casarme contigo Eso me hace muy feliz mi amor Vamos S\\u00ed mi amor Vamos Pero antes reg\\u00e1leme un besito S\\u00ed mi amor Sigues ah\\u00ed S\\u00ed s\\u00ed Aqu\\u00ed estoy mi amor Ahora s\\u00ed Vamos S\\u00ed vamos que por aqu\\u00ed mi amor La izquierda Un poquito m\\u00e1s Un poquito m\\u00e1s S\\u00ed mi amor Ya llegamos S\\u00ed s\\u00ed ya estamos en la cama Estamos en la cama S\\u00ed s\\u00ed Ok U aqu\\u00ed mi amor Aqu\\u00ed estoy Aqu\\u00ed estoy Aqu\\u00ed estoy mi amor aqu\\u00ed estoy aqu\\u00ed estoy mi amor Ahora s\\u00ed vamos a disfrutar de nuestra noche de esposas Qui\\u00e9n es Silvana Tu hermana Adelante Ay que pueda interrumpirlo en su noche rom\\u00e1ntica pero ay se o\\u00edan tan lindos en el altar hoy estoy tan feliz de que se hayan casado Gracias hermanita Nosotros tambi\\u00e9n estamos muy felices Cierto mi amor S\\u00ed estamos muy contentos Ay pero Paola mira como est\\u00e1s muy cansada tiene las ojeras s\\u00faper marcadas Yo creo que deber\\u00edan descansar S\\u00ed yo estoy tan cansada No te imaginas estos tacones todo el d\\u00eda Estoy agotada Aparte que madrugue demasiado hoy Entonces estoy sin nada de energ\\u00eda Bueno entonces yo los dejo porque me imagino que van a tener su noche rom\\u00e1ntica y deben descansar chavos Chao hermanita Cu\\u00eddate mi amor Sabes Si si est\\u00e1s muy cansada No te preocupes yo quiero la verdad Que t\\u00fa descanses y que te sientas bien cuando lo hagamos Entonces yo creo que lo mejor es que lo dejemos para otro momento Te parece Ay s\\u00ed mi amor Es que la verdad yo quiero estar al cien por ciento para ti y en este momento estoy muy cansada Entonces descansa T\\u00fa tambi\\u00e9n mi amor Yo te ayudo Vamos Buenas noches mi amor Qu\\u00e9 mi amor Ya mi amor me memoria de suerte Usted s\\u00ed mi amor Qu\\u00e9 pas\\u00f3 amor Tengo una cita muy importante hoy Creo que ir\\u00e9 ya al ba\\u00f1o No puedo perder la cita y no puedo llegar tarde S\\u00ed s\\u00ed No te preocupes No pasa nada T\\u00fa t\\u00fa qu\\u00e9 vas a hacer hoy Me voy a quedar en la cama todo el d\\u00eda Est\\u00e1 bien mi princesa Mereces descansar despu\\u00e9s del d\\u00eda de ayer S\\u00ed mi amor Yo voy tarde Descansa mi amor Usted me est\\u00e1 diciendo que estoy empeorando O sea que no tengo nada m\\u00e1s que perder Mmm uno doctora quiero hacerlo Lo \\u00fanico que s\\u00ed le quiero pedir es que no le cuente a Paola Ella se pondr\\u00eda muy nerviosa Quiero discreci\\u00f3n Voy a una cita Est\\u00e1 bien Mark Voy a agendarlo de una vez Entonces Esposito c\\u00f3mo te fue mi amor Muy bien Y t\\u00fa Bien mi amor Y eso D\\u00f3nde estabas mi amor Estaba en una reuni\\u00f3n de negocios Y eso mi amor C\\u00f3mo te fue Muy bien De hecho mejor de lo que esperaba Tengo que contarte algo importante pero sent\\u00e9monos S\\u00ed mi amor Claro Ven por aqu\\u00ed Mi amor Ven por aqu\\u00ed Eso Cu\\u00e9ntame Qu\\u00e9 pas\\u00f3 mi amor Mira yo s\\u00e9 que llevamos muy poco tiempo de casados pero tengo que contarte algo Tengo que hacer un viaje de negocios muy importante As\\u00ed que me voy la pr\\u00f3xima semana Ay qu\\u00e9 pesar mi amor T\\u00fa no te imaginas para m\\u00ed c\\u00f3mo es de dif\\u00edcil estar sin ti Ay mi amor Para m\\u00ed tambi\\u00e9n es muy dif\\u00edcil Si por m\\u00ed fuera yo yo mantendr\\u00eda pegadito del lado tuyo todo el d\\u00eda Pero ya ves como son las cosas S\\u00ed mi amor ni modo Trabajo es trabajo y t\\u00fa me prometiste que me ibas a tratar como una reina As\\u00ed que espero que te vaya muy bien en tus negocios y que vengas lleno de d\\u00f3lares As\\u00ed va a ser mi amor De hecho quiero que sepas que puedes estar tranquila Mientras est\\u00e9s conmigo Nada te va a faltar Mi amor mi amor Ya llegaste S\\u00ed mi amor soy yo que suena as\\u00ed mi amor La maleta es Silvana Ah Silvana Qu\\u00e9 haces aqu\\u00ed Hola hermanito C\\u00f3mo est\\u00e1s Muy bien Es que le dije a Silvi que t\\u00fa te llevas una semana completa y le dije que se quedara aqu\\u00ed conmigo en la casa para no estar solito Y por supuesto le dije que s\\u00ed Adem\\u00e1s desde que se casaron mi abuela es como mi hermanita Bueno qu\\u00e9 rico hermanita La verdad yo quedo mucho m\\u00e1s tranquilo si t\\u00fa te quedas con Paola T\\u00fa sabes que ella es mi tesoro Yo te la voy a cuidar muy bien D\\u00eda y noche voy a estar con ella Vamos a hacer como u\\u00f1a y mugre Me alegro bastante Bueno le voy a mostrar la habitaci\\u00f3n a Spano para que ella se instale Est\\u00e1 bien mi amor Yo voy de salida Listo Ahorita te llamo Que te vaya bien mi amor Chao hermanito Que te vaya muy bien Marlowe Ya tenemos todo listo en la sala de cirug\\u00eda Est\\u00e1 preparada doctora La verdad es que estoy muy asustado Estoy muy nervioso Me imagino Marlow yo solo le pido a Dios que todo esto salga bien \\u00c9l va a cuidarlo Marlon Ahora s\\u00f3lo respire profundo Y aunque s\\u00e9 que es dif\\u00edcil trate de tranquilizarse pero piense en su mujer H\\u00e1galo por ella Lo voy a hacer por ella porque es una mujer maravillosa porque merece tener un marido completo Mi esposa ser\\u00e1 la mujer m\\u00e1s feliz del mundo cuando me vea sano Paola a mi ama tanto como yo a ella y quiere lo mejor para m\\u00ed Cuando pueda volver a ver estaremos mejor que nunca Ser\\u00e1 como vivir en una luna de miel Todo esto es una motivaci\\u00f3n para usted para que est\\u00e9 positivo en todo Todo va a salir muy bien Marlyn Cr\\u00e9ame Ahora va S\\u00ed C\\u00f3mo se siente Marlon Doctora Estoy muy nerviosa Tengo mucho miedo Lo s\\u00e9 Ahora vamos a saber si la operaci\\u00f3n funcion\\u00f3 o no S\\u00ed A ver vamos a sentarnos Vamos a hacer lo siguiente Marlen Yo voy a quitarle las vendas muy despacio Por favor no abra los ojos hasta que no se lo diga S\\u00ed No veo nada doctora Todo est\\u00e1 oscuro La presi\\u00f3n no funcion\\u00f3 Doctor C\\u00e1lmese Marlon C\\u00e1lmese por favor Espere Estoy Estoy viendo algo Doctora estoy viendo algo Estoy viendo doctora Mis manos Doctora La estoy viendo La estoy viendo Doctora Marlow Funcion\\u00f3 Si\\u00f3 Marlon La operaci\\u00f3n fue un \\u00e9xito doctora Gracias No sabe lo que acabas de hacer por m\\u00ed mi amor Amor est\\u00e1s ah\\u00ed S\\u00ed mi amor Aqu\\u00ed estoy Llegaste m\\u00e1s temprano Pens\\u00e9 que me ibas a avisar antes de venir Y d\\u00f3nde est\\u00e1n las gafas Y t\\u00fa vas sola Creo que los dej\\u00e9 en la sala de la moci\\u00f3n Pero oye hay un aroma diferente aqu\\u00ed Con qui\\u00e9n est\\u00e1s No no yo estoy sola de pronto porque me apliqu\\u00e9 el perfume de Silvana y de pronto est\\u00e1s confundido Y Silvana d\\u00f3nde est\\u00e1 Est\\u00e1 con un amigo Eso me dijo Pero yo creo que es como el novio Igual Eso no importa mi amor Ven que aqu\\u00ed lo que importa realmente es que ya llegaste y est\\u00e1s aqu\\u00ed conmigo mi amor Ten\\u00eda tantas ganas de abrazarte La esposa m\\u00e1s hermosa y m\\u00e1s fiel uno Silvana Paola G Hermanito Quiero contarles que me fue muy bien en el viaje M\\u00e1s bien de lo que yo pensaba C\\u00f3mo les parece que hice un contrato millonario con una empresa al exterior S\\u00ed eso quiere decir que vas a ganar m\\u00e1s dinero As\\u00ed es Y no s\\u00f3lo eso Quiero que a partir de hoy ustedes dos sean mis socias Quiero darles un cargo importante en la empresa que reciban muy buen dinero de por medio Algo as\\u00ed como unas gentes tal cual cuenta conmigo Herman Y por supuesto conmigo tambi\\u00e9n mi amor t\\u00fa sabes que siempre te voy a apoyar en todo Gracias por tenernos en cuenta Pero c\\u00f3mo no voy a tener en cuenta a las dos mujeres m\\u00e1s importantes de mi vida Es m\\u00e1s a partir de ma\\u00f1ana voy a empezar con los preparativos para la contrataci\\u00f3n de ustedes dos en la empresa Mi amor Por qu\\u00e9 nos citaste aqu\\u00ed Quer\\u00eda adelantar la contrataci\\u00f3n de ustedes dos a la empresa Quiero que a partir de ese momento ustedes dos sean las directoras comerciales del \\u00e1rea de producci\\u00f3n Solamente tiene que firmar y listo Okey ser\\u00e1 todo un hecho Mmm uno Oye hermanito estoy segura de que no te vas a arrepentir de esto Yo tambi\\u00e9n estoy muy seguro de que no me voy a arrepentir aqu\\u00ed Las \\u00fanicas personas que se van a arrepentir son ustedes dos Qu\\u00e9 Por cierto mi amor Qu\\u00e9 bonito te queda ese vestido negro Ay muchas gracias Qu\\u00e9 T\\u00fa C\\u00f3mo sabes que soy de negro Puedes ver S\\u00ed no fui a ning\\u00fan viaje de negocios Me somet\\u00ed a una cirug\\u00eda bastante riesgosa para recuperar mi vista que por suerte fue un \\u00e9xito Pero lo primero que veo cuando llego a mi casa es a mi esposa acostada con mi hermana en mi misma cama Pero de qu\\u00e9 est\\u00e1s hablando Seguro No est\\u00e1 haciendo bien S\\u00ed seguramente tampoco estaba viendo bien cuando se estaban acariciando y estaban jugando con la comida en mi propia cara Ustedes no pueden seguir pensando que yo soy el mismo de siempre No se puede seguir burlando de m\\u00ed Eso les va a salir muy caro O sea que lo que los hiciste firmar no es un contrato de trabajo cierto Qu\\u00e9 inteligente eres hermanita Paola me acaba de firmar el divorcio Y tambi\\u00e9n renunci\\u00f3 a toda la mitad de mis bienes Qu\\u00e9 No no eso no puede ser Y tu hermanita Me acabas de ceder tu parte de la casa de nuestros padres No No me puedes hacer esto Te aguant\\u00e9 tres a\\u00f1os No me puedes dejar sin nada Yo vivo en esa casa No me puedes sacar de ah\\u00ed Viv\\u00edas Viv\\u00edas hermanito porque a partir de ese momento te va a tocar buscar un lugar debajo de un puente Pero tranquila hermanita No vas a estar sola porque Paola te puede hacer compa\\u00f1\\u00eda Paola a partir de este momento se larga de mi casa No Pero si yo soy el amor de tu vida Yo soy tu sangre l\\u00e1rguense pero no l\\u00e1rguense en el juego de la vida La lealtad es la \\u00fanica carta que garantiza una victoria duradera basado en una historia real Hola a todos Nosotros somos actores de felicidad y el d\\u00eda de hoy les queremos contar que todo lo que acabaron de ver fue guionizado y dramatizado Ninguno de nosotros sufre da\\u00f1o f\\u00edsico ni psicol\\u00f3gico Felicidad no promueve ning\\u00fan tipo de violencia Nos vemos en un pr\\u00f3ximo video Chao\\n\\nProporciona lo siguiente en formato JSON:\\n- \\"T\\u00edtulo Opci\\u00f3n 1\\": Un t\\u00edtulo alineado con la estructura de los ejemplos proporcionados, pero manteniendo la idea central del t\\u00edtulo actual.\\n- \\"T\\u00edtulo Opci\\u00f3n 2\\": Un t\\u00edtulo intrigante que no revele demasiado pero que evoque emociones fuertes.\\n- \\"T\\u00edtulo Opci\\u00f3n 3\\": Un t\\u00edtulo muy creativo, optimizado para YouTube, cumpliendo con las pol\\u00edticas, breve, y usando may\\u00fasculas en palabras clave importantes.\\n- \\"Resumen\\": Un resumen intrigante, detallado, y atractivo que invite a los espectadores a ver el video completo.\\n"}]}], "inferenceConfig": {"maxTokens": 4096, "temperature": 0.7}}', 'url': 'https://bedrock-runtime.us-east-1.amazonaws.com/model/anthropic.claude-3-5-sonnet-20240620-v1%3A0/converse', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000002D9B38FB220>, 'has_streaming_input': False, 'auth_type': None, 'unsigned_payload': None}}
+2024-10-21 22:17:38,154 - DEBUG - Event request-created.bedrock-runtime.Converse: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000002D9B38FB190>>
+2024-10-21 22:17:38,155 - DEBUG - Event choose-signer.bedrock-runtime.Converse: calling handler <function set_operation_specific_signer at 0x000002D9B1C17E50>
+2024-10-21 22:17:38,155 - DEBUG - Calculating signature using v4 auth.
+2024-10-21 22:17:38,155 - DEBUG - CanonicalRequest:
+POST
+/model/anthropic.claude-3-5-sonnet-20240620-v1%253A0/converse
+
+content-type:application/json
+host:bedrock-runtime.us-east-1.amazonaws.com
+x-amz-date:20241022T031738Z
+
+content-type;host;x-amz-date
+b8993bdf55136ec65ffa2a6720cd787a30ab2bd7cf8cd5a2e5876038d307886a
+2024-10-21 22:17:38,155 - DEBUG - StringToSign:
+AWS4-HMAC-SHA256
+20241022T031738Z
+20241022/us-east-1/bedrock/aws4_request
+95b41571c6b01b06bbc8c94f45b4f6c3b64a2afb233482b49d403c8170b95277
+2024-10-21 22:17:38,155 - DEBUG - Signature:
+91b599e721f5afd601c39a25729581b31f7bddc466512d721beeb54972922c97
+2024-10-21 22:17:38,155 - DEBUG - Event request-created.bedrock-runtime.Converse: calling handler <function add_retry_headers at 0x000002D9B1C28040>
+2024-10-21 22:17:38,156 - DEBUG - Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://bedrock-runtime.us-east-1.amazonaws.com/model/anthropic.claude-3-5-sonnet-20240620-v1%3A0/converse, headers={'Content-Type': b'application/json', 'User-Agent': b'Boto3/1.35.44 md/Botocore#1.35.44 ua/2.0 os/windows#10 md/arch#amd64 lang/python#3.9.0 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.35.44', 'X-Amz-Date': b'20241022T031738Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAXYKJR3W7KFWCEA6H/20241022/us-east-1/bedrock/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=91b599e721f5afd601c39a25729581b31f7bddc466512d721beeb54972922c97', 'amz-sdk-invocation-id': b'86a2f13d-b90c-4ecb-a03a-10fb7e33bbf1', 'amz-sdk-request': b'attempt=1', 'Content-Length': '17105'}>
+2024-10-21 22:17:38,156 - DEBUG - Certificate path: C:\IA\ia-youtube\venv\lib\site-packages\certifi\cacert.pem
+2024-10-21 22:17:45,791 - DEBUG - Response headers: {'Date': 'Tue, 22 Oct 2024 03:17:43 GMT', 'Content-Type': 'application/json', 'Content-Length': '949', 'Connection': 'keep-alive', 'x-amzn-RequestId': 'e62ecc70-8f0b-4fdf-b978-56499d79b266'}
+2024-10-21 22:17:45,791 - DEBUG - Response body:
+b'{"metrics":{"latencyMs":7004},"output":{"message":{"content":[{"text":"{\\n  \\"T\xc3\xadtulo Opci\xc3\xb3n 1\\": \\"LE FUE INFIEL A SU ESPOSO CIEGO CON SU PROPIA HERMANA EN SU CAMA\\",\\n  \\"T\xc3\xadtulo Opci\xc3\xb3n 2\\": \\"TRAICI\xc3\x93N INESPERADA: El SECRETO que DESTRUY\xc3\x93 un MATRIMONIO\\",\\n  \\"T\xc3\xadtulo Opci\xc3\xb3n 3\\": \\"RECUPER\xc3\x93 la VISTA y DESCUBRI\xc3\x93 el ENGA\xc3\x91O m\xc3\xa1s DOLOROSO\\",\\n  \\"Resumen\\": \\"Un hombre ciego se somete a una arriesgada cirug\xc3\xada para recuperar la vista, con la esperanza de ver a su amada esposa por primera vez. Sin embargo, al regresar a casa, descubre una traici\xc3\xb3n que cambiar\xc3\xa1 su vida para siempre. \xc2\xbfQu\xc3\xa9 secreto oscuro escond\xc3\xadan su esposa y su hermana? \xc2\xbfC\xc3\xb3mo enfrentar\xc3\xa1 esta devastadora revelaci\xc3\xb3n? No te pierdas esta conmovedora historia de amor, enga\xc3\xb1o y redenci\xc3\xb3n que te mantendr\xc3\xa1 al borde de tu asiento hasta el final.\\"\\n}"}],"role":"assistant"}},"stopReason":"end_turn","usage":{"inputTokens":5381,"outputTokens":268,"totalTokens":5649}}'
+2024-10-21 22:17:45,792 - DEBUG - Event needs-retry.bedrock-runtime.Converse: calling handler <botocore.retryhandler.RetryHandler object at 0x000002D9B391C850>
+2024-10-21 22:17:45,792 - DEBUG - No retry needed.
+2024-10-21 22:17:45,792 - INFO - Sugerencias generadas: {
+    "Título Opción 1": "LE FUE INFIEL A SU ESPOSO CIEGO CON SU PROPIA HERMANA EN SU CAMA",
+    "Título Opción 2": "TRAICIÓN INESPERADA: El SECRETO que DESTRUYÓ un MATRIMONIO",
+    "Título Opción 3": "RECUPERÓ la VISTA y DESCUBRIÓ el ENGAÑO más DOLOROSO",
+    "Resumen": "Un hombre ciego se somete a una arriesgada cirugía para recuperar la vista, con la esperanza de ver a su amada esposa por primera vez. Sin embargo, al regresar a casa, descubre una traición que cambiará su vida para siempre. ¿Qué secreto oscuro escondían su esposa y su hermana? ¿Cómo enfrentará esta devastadora revelación? No te pierdas esta conmovedora historia de amor, engaño y redención que te mantendrá al borde de tu asiento hasta el final."
+}
+2024-10-21 22:17:45,792 - INFO - Evento 'resultado' emitido correctamente para session_id: 78a3f8a3-815f-49ff-acda-9e6717a5b8a1

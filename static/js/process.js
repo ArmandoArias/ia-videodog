@@ -10,11 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultSection = document.getElementById('result-section');
     const sugerenciasPre = document.getElementById('sugerencias');
 
+    socket.on('connect', () => {
+        console.log('Conectado a Socket.IO');
+    });
+
     videoForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const urlVideo = document.getElementById('url_video').value;
 
-        // Validar la URL en el frontend (opcional pero recomendable)
+        // Validar la URL en el frontend
         if (!isValidYouTubeUrl(urlVideo)) {
             alert('Por favor, ingresa una URL válida de YouTube.');
             return;
@@ -36,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             if (data.session_id) {
+                console.log('Unido a la sala:', data.session_id);
                 // Unirse a la sala correspondiente
                 socket.emit('join', data.session_id);
             } else if (data.error) {
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Escuchar eventos de progreso
     socket.on('progreso', (data) => {
+        console.log('Evento progreso recibido:', data);
         const { step, total_steps, data: mensaje } = data;
         const porcentaje = Math.round((step / total_steps) * 100);
         progressBar.style.width = `${porcentaje}%`;
@@ -61,14 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Escuchar evento de resultado
     socket.on('resultado', (data) => {
+        console.log('Evento resultado recibido:', data);
         const { sugerencias } = data;
-        sugerenciasPre.textContent = sugerencias;
+        // Formatear las sugerencias para mejor legibilidad
+        sugerenciasPre.textContent = JSON.stringify(sugerencias, null, 4);
         resultSection.style.display = 'block';
         progressSection.style.display = 'none';
     });
 
     // Escuchar evento de error
     socket.on('error', (data) => {
+        console.log('Evento error recibido:', data);
         const { data: mensaje } = data;
         alert(`Error: ${mensaje}`);
         progressSection.style.display = 'none';
