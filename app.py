@@ -1,5 +1,3 @@
-# app.py
-
 import eventlet
 eventlet.monkey_patch()  # Debe llamarse antes de cualquier otra importación
 
@@ -95,11 +93,28 @@ def procesar_video_endpoint():
         return jsonify({'error': 'La URL proporcionada no es válida.'}), 400
 
     try:
+        # Verificar si el video ya existe en la base de datos
+        existing_video = Video.query.get(url_limpia)
         session_id = str(uuid4())  # Generar un nuevo session_id
         logger.debug(f"Generando nuevo session_id: {session_id}")
-        # Iniciar la tarea en segundo plano
-        socketio.start_background_task(procesar_video, url_limpia, session_id)
-        return jsonify({'message': 'Procesamiento iniciado.', 'session_id': session_id}), 200
+
+        if existing_video:
+            logger.info(f"El video con URL {url_limpia} ya existe en la base de datos.")
+            sugerencias = {
+                'Título Opción 1': existing_video.title1,
+                'Título Opción 2': existing_video.title2,
+                'Título Opción 3': existing_video.title3,
+                'Resumen': existing_video.summary
+            }
+            return jsonify({
+                'message': 'Video ya procesado. Mostrando resultados.',
+                'sugerencias': sugerencias,
+                'session_id': session_id
+            }), 200
+        else:
+            # Iniciar la tarea en segundo plano
+            socketio.start_background_task(procesar_video, url_limpia, session_id)
+            return jsonify({'message': 'Procesamiento iniciado.', 'session_id': session_id}), 200
     except Exception as e:
         logger.error(f"Error en procesar_video_endpoint: {e}", exc_info=True)
         return jsonify({'error': str(e)}), 500
@@ -231,7 +246,6 @@ def procesar_video(url_video, session_id):
     except Exception as e:
         logger.error(f"Error en procesar_video: {e}", exc_info=True)
         socketio.emit('error', {'error': str(e)}, room=session_id)
-
 
 # Manejo de eventos de SocketIO
 @socketio.on('connect')

@@ -1,5 +1,3 @@
-// static/js/process.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const socket = io();
 
@@ -59,7 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.session_id) {
+            if (data.sugerencias) {
+                // El video ya estaba procesado, mostrar las sugerencias directamente
+                console.log('Video ya procesado. Mostrando resultados:', data.sugerencias);
+                mostrarSugerencias(data.sugerencias);
+                // Reactivar el botón "Procesar" y restablecer su texto
+                processButton.disabled = false;
+                processButton.textContent = 'Procesar';
+                // Ocultar la sección de progreso y spinner
+                progressSection.style.display = 'none';
+                spinner.style.display = 'none';
+            } else if (data.session_id) {
                 console.log('Unido a la sala:', data.session_id);
                 // Unirse a la sala correspondiente
                 socket.emit('join', { 'session_id': data.session_id });
@@ -83,21 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Escuchar eventos de progreso
-    socket.on('progreso', (data) => {
-        console.log('Evento progreso recibido:', data);
-        const { step, total_steps, data: mensaje } = data;
-        const porcentaje = Math.round((step / total_steps) * 100);
-        progressBar.style.width = `${porcentaje}%`;
-        progressBar.setAttribute('aria-valuenow', porcentaje);
-        progressText.textContent = mensaje;
-    });
-
-    // Escuchar evento de resultado
-    socket.on('resultado', (data) => {
-        console.log('Evento resultado recibido:', data);
-        const { sugerencias } = data;
-
+    // Función para mostrar las sugerencias en el frontend
+    function mostrarSugerencias(sugerencias) {
         // Limpiar cualquier sugerencia previa
         sugerenciasContainer.innerHTML = '';
 
@@ -175,6 +170,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mostrar la sección de resultados y ocultar el progreso y spinner
         resultSection.style.display = 'block';
+    }
+
+    // Escuchar eventos de progreso
+    socket.on('progreso', (data) => {
+        console.log('Evento progreso recibido:', data);
+        const { step, total_steps, data: mensaje } = data;
+        const porcentaje = Math.round((step / total_steps) * 100);
+        progressBar.style.width = `${porcentaje}%`;
+        progressBar.setAttribute('aria-valuenow', porcentaje);
+        progressText.textContent = mensaje;
+    });
+
+    // Escuchar evento de resultado para nuevos procesos
+    socket.on('resultado', (data) => {
+        console.log('Evento resultado recibido:', data);
+        const { sugerencias } = data;
+
+        // Mostrar las sugerencias
+        mostrarSugerencias(sugerencias);
+
+        // Mostrar la sección de resultados y ocultar el progreso y spinner
+        resultSection.style.display = 'block';
         progressSection.style.display = 'none';
         spinner.style.display = 'none';
 
@@ -186,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Escuchar evento de error
     socket.on('error', (data) => {
         console.log('Evento error recibido:', data);
-        const { data: mensaje } = data;
-        toastr.error(`Error: ${mensaje}`);
+        const { error } = data;
+        toastr.error(`Error: ${error}`);
         progressSection.style.display = 'none';
         spinner.style.display = 'none';
 
