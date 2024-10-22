@@ -4511,3 +4511,8 @@ b'{"metrics":{"latencyMs":8369},"output":{"message":{"content":[{"text":"{\\n  \
 2024-10-22 02:53:44,089 - INFO - Video guardado en la base de datos: <Video https://www.youtube.com/watch?v=U7VM4KxeFFw - ESPOSA EMBARAZADA DESCUBRE A SU MARIDO CON LA VECINA EN SU PROPIA CASA>
 2024-10-22 02:53:44,289 - INFO - Datos guardados correctamente para session_id: fbe09b96-215e-4bb5-b75b-275623143049
 2024-10-22 02:53:44,289 - INFO - Evento 'resultado' emitido correctamente para session_id: fbe09b96-215e-4bb5-b75b-275623143049
+2024-10-22 03:05:13,927 - INFO - Cliente desconectado
+2024-10-22 03:05:20,113 - INFO - Cliente conectado
+2024-10-22 03:05:24,424 - INFO - Cliente desconectado
+2024-10-22 03:08:03,711 - INFO - Cliente conectado
+2024-10-22 03:08:07,874 - INFO - Cliente desconectado

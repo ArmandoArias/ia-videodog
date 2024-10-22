@@ -116,6 +116,30 @@ def procesar_video_with_context(url_video, session_id):
     with app.app_context():
         procesar_video(url_video, session_id, socketio)
 
+# Nueva Ruta: /database
+@app.route('/database')
+def database():
+    """
+    Ruta para mostrar los videos ya procesados con paginación y búsqueda.
+    """
+    page = request.args.get('page', 1, type=int)
+    per_page = 10  # Número de videos por página
+    search_query = request.args.get('search', '', type=str)
+
+    if search_query:
+        # Filtrar videos por título o URL
+        filter_condition = (Video.title1.ilike(f'%{search_query}%')) | \
+                           (Video.title2.ilike(f'%{search_query}%')) | \
+                           (Video.title3.ilike(f'%{search_query}%')) | \
+                           (Video.url_video.ilike(f'%{search_query}%'))
+        videos_paginados = Video.query.filter(filter_condition).order_by(Video.url_video.desc()).paginate(page=page, per_page=per_page, error_out=False)
+    else:
+        # Consultar la base de datos con paginación sin filtros
+        videos_paginados = Video.query.order_by(Video.url_video.desc()).paginate(page=page, per_page=per_page, error_out=False)
+
+    return render_template('database.html', videos=videos_paginados, search_query=search_query)
+
+
 # Manejo de eventos de SocketIO
 @socketio.on('connect')
 def handle_connect():

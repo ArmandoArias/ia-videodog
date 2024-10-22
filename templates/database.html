@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Base de Datos - IA YouTube{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Videos Procesados</h2>
+
+<!-- Formulario de Búsqueda -->
+<form method="get" action="{{ url_for('database') }}" class="row g-3 mb-4">
+    <div class="col-md-10">
+        <input type="text" name="search" class="form-control" placeholder="Buscar por título o URL..." value="{{ search_query }}">
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+    </div>
+</form>
+
+{% if videos.items %}
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>URL del Video</th>
+                    <th>Título Opción 1</th>
+                    <th>Título Opción 2</th>
+                    <th>Título Opción 3</th>
+                    <th>Resumen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for video in videos.items %}
+                <tr>
+                    <td>{{ loop.index + ((videos.page - 1) * videos.per_page) }}</td>
+                    <td><a href="{{ video.url_video }}" target="_blank">{{ video.url_video }}</a></td>
+                    <td>{{ video.title1 }}</td>
+                    <td>{{ video.title2 }}</td>
+                    <td>{{ video.title3 }}</td>
+                    <td>{{ video.summary }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if videos.has_prev %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('database', page=videos.prev_num, search=search_query) }}" aria-label="Anterior">
+                    <span aria-hidden="true">&laquo; Anterior</span>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Anterior">
+                    <span aria-hidden="true">&laquo; Anterior</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for page_num in videos.iter_pages(left_edge=2, right_edge=2, left_current=2, right_current=2) %}
+                {% if page_num %}
+                    {% if page_num == videos.page %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="{{ url_for('database', page=page_num, search=search_query) }}">{{ page_num }}</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#">…</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if videos.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('database', page=videos.next_num, search=search_query) }}" aria-label="Siguiente">
+                    <span aria-hidden="true">Siguiente &raquo;</span>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Siguiente">
+                    <span aria-hidden="true">Siguiente &raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% else %}
+    <p>No hay videos procesados en la base de datos.</p>
+{% endif %}
+{% endblock %}
