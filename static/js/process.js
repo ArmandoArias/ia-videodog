@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.session_id) {
                 console.log('Unido a la sala:', data.session_id);
                 // Unirse a la sala correspondiente
-                socket.emit('join', data.session_id);
+                socket.emit('join', { 'session_id': data.session_id });
             } else if (data.error) {
                 toastr.error(data.error);
                 // Reactivar el botón "Procesar" y restablecer su texto
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 spinner.style.display = 'none';
             }
         })
-        .catch(error => {
+        .catch((error) => {
             console.error('Error:', error);
             toastr.error('Ocurrió un error al iniciar el procesamiento.');
             // Reactivar el botón "Procesar" y restablecer su texto
